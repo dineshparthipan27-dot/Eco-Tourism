@@ -60,42 +60,42 @@
             </div>
 
        
-            <div class="eco-search-engine" data-aos="zoom-in-up" data-aos-duration="1200" data-aos-delay="600">
+           <form class="eco-search-engine" id="ecoSearchForm" data-aos="zoom-in-up" data-aos-duration="1200" data-aos-delay="600" novalidate>
 
-                <div class="search-segment">
-                    <label>📍 Destination</label>
-                    <input type="text" placeholder="Where do you want to explore?">
-                </div>
+    <div class="search-segment">
+        <label>📍 Destination</label>
+        <input type="text" id="searchDest" placeholder="Where do you want to explore?" required>
+        <span class="form-error" id="destError"></span>
+    </div>
 
-                <div class="search-segment">
-                    <label>🌲 Eco-Zone</label>
-                    <select>
-                        <option value="">Select Habitat</option>
-                        <option value="rainforest">Rainforests (Silent Valley)</option>
-                        <option value="highlands">Highlands (Munnar)</option>
-                        <option value="mangrove">Wetlands (Backwaters)</option>
-                    </select>
-                </div>
+    <div class="search-segment">
+        <label>🌲 Eco-Zone</label>
+        <select id="searchZone" required>
+            <option value="" selected disabled>Select Habitat</option>
+            <option value="rainforest">Rainforests (Silent Valley)</option>
+            <option value="highlands">Highlands (Munnar)</option>
+            <option value="mangrove">Wetlands (Backwaters)</option>
+        </select>
+        <span class="form-error" id="zoneError"></span>
+    </div>
 
-             
-                <div class="search-segment">
-                    <label>🎟️ Pass Type</label>
-                    <select>
-                        <option value="day">Day Trail Pass</option>
-                        <option value="camping">Overnight Eco-Camp</option>
-                        <option value="safari">Wildlife Expedition</option>
-                    </select>
-                </div>
+    <div class="search-segment">
+        <label>🎟️ Pass Type</label>
+        <select id="searchPass" required>
+            <option value="" selected disabled>Select Pass Type</option>
+            <option value="day">Day Trail Pass</option>
+            <option value="camping">Overnight Eco-Camp</option>
+            <option value="safari">Wildlife Expedition</option>
+        </select>
+        <span class="form-error" id="passError"></span>
+    </div>
 
-                
-                <button class="engine-search-btn">
-                    <a href="404.html">
-                        <span class="btn-text">Search Trails</span>
-                    </a>
-                    <span class="btn-arrow">➔</span>
-                </button>
+    <button type="submit" class="engine-search-btn" id="searchBtn">
+        <span class="btn-text">Search Trails</span>
+        <span class="btn-arrow">➔</span>
+    </button>
 
-            </div>
+</form>
 
       
             <div class="quick-eco-tags" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
@@ -512,6 +512,75 @@
                 }, 100);
             }
         });
+
+        const searchForm = document.getElementById("ecoSearchForm");
+
+if (searchForm) {
+    searchForm.addEventListener("submit", (e) => {
+        e.preventDefault(); // ஃபார்ம் ரீலோட் ஆகுறத தடுக்கும்
+        let isValid = true;
+
+        // Get inputs
+        const destInput = document.getElementById("searchDest");
+        const zoneInput = document.getElementById("searchZone");
+        const passInput = document.getElementById("searchPass");
+
+        // Get error spans
+        const destError = document.getElementById("destError");
+        const zoneError = document.getElementById("zoneError");
+        const passError = document.getElementById("passError");
+
+        // Reset previous errors
+        [destInput, zoneInput, passInput].forEach(inp => inp.classList.remove("input-error", "input-success"));
+        [destError, zoneError, passError].forEach(err => { err.innerText = ""; err.classList.remove("show"); });
+
+        // 1. Validate Destination
+        if (destInput.value.trim().length < 3) {
+            destError.innerText = "Enter at least 3 characters.";
+            destError.classList.add("show");
+            destInput.classList.add("input-error");
+            isValid = false;
+        } else {
+            destInput.classList.add("input-success");
+        }
+
+        // 2. Validate Eco-Zone
+        if (zoneInput.value === "") {
+            zoneError.innerText = "Please select a habitat.";
+            zoneError.classList.add("show");
+            zoneInput.classList.add("input-error");
+            isValid = false;
+        } else {
+            zoneInput.classList.add("input-success");
+        }
+
+        // 3. Validate Pass Type
+        if (passInput.value === "") {
+            passError.innerText = "Please select a pass type.";
+            passError.classList.add("show");
+            passInput.classList.add("input-error");
+            isValid = false;
+        } else {
+            passInput.classList.add("input-success");
+        }
+
+        // 4. Submit & Redirect
+        if (isValid) {
+            const searchBtn = document.getElementById("searchBtn");
+            const btnText = searchBtn.querySelector(".btn-text");
+            
+            // Button loading animation
+            searchBtn.disabled = true;
+            btnText.innerText = "Searching...";
+            searchBtn.style.opacity = "0.8";
+
+            setTimeout(() => {
+                // Redirect to 404 page
+                window.location.href = "404.html";
+            }, 1000); // 1 second delay for smooth UX
+        }
+    });
+}
     </script>
 
 </body>
