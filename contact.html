@@ -38,7 +38,7 @@
         </div>
     </nav>
 
-    <!-- Section 1: Minimalist High-End Hero -->
+   
     <section class="contact-hero-minimal">
         <div class="container hero-container-min">
 
@@ -59,11 +59,10 @@
         </div>
     </section>
 
-    <!-- Section 2: Glassmorphism Connect Cards -->
+    
     <section class="connect-glass-section">
         <div class="container connect-grid-pro">
 
-            <!-- Card 1: Location -->
             <div class="glass-card-pro" data-aos="fade-up" data-aos-delay="100">
                 <div class="card-glow"></div>
                 <div class="card-content">
@@ -73,7 +72,7 @@
                 </div>
             </div>
 
-            <!-- Card 2: Phone -->
+            
             <div class="glass-card-pro" data-aos="fade-up" data-aos-delay="200">
                 <div class="card-glow"></div>
                 <div class="card-content">
@@ -83,7 +82,7 @@
                 </div>
             </div>
 
-            <!-- Card 3: Email -->
+          
             <div class="glass-card-pro" data-aos="fade-up" data-aos-delay="300">
                 <div class="card-glow"></div>
                 <div class="card-content">
@@ -245,7 +244,7 @@
         const form = document.getElementById('contactForm');
         const emailInput = document.getElementById('email');
 
-        // 1. டைப் பண்ணும்போதே செக் பண்ற வேலிடேஷன்
+        
         emailInput.addEventListener('input', function () {
             const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             const errorMsg = emailInput.nextElementSibling.nextElementSibling;
@@ -259,14 +258,13 @@
             }
         });
 
-        // 2. சப்மிட் பண்ணும்போது நடக்குற மேஜிக்
+        
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
             const emailValue = emailInput.value;
             const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-            // ஈமெயில் தப்பா இருந்தா இங்கேயே நிறுத்திடும்
             if (!emailRegex.test(emailValue)) {
                 alert("Please enter a valid email address before sending.");
                 return;
@@ -282,7 +280,6 @@
                 btnText.innerText = "Sent Successfully!";
                 btn.style.background = "#4CAF50";
 
-                // ரீடைரக்ட் ஆக முன்னாடி சின்ன டிலே
                 setTimeout(() => {
                     window.location.href = '404.html';
                 }, 500);
@@ -307,7 +304,6 @@
                 newsBtn.innerText = "Subscribing...";
                 newsBtn.disabled = true;
 
-                // சப்ஸ்கிரைப் சக்சஸ் ஆனதும்
                 setTimeout(() => {
                     newsBtn.innerText = "Subscribed!";
                     window.location.href = '404.html'

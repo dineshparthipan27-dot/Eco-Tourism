@@ -1,4 +1,4 @@
-/* --- MINIMALIST HIGH-END HERO --- */
+
 .contact-hero-minimal {
     padding: 180px 20px 100px 20px;
     background: #050a05;
@@ -38,7 +38,7 @@
 .hero-title-min span {
     color: #ffffff;
     opacity: 0.6;
-    /* Light gray to give typography contrast */
+    
 }
 
 .hero-sub-min {
@@ -47,7 +47,7 @@
     line-height: 1.6;
 }
 
-/* Floating Card Style */
+
 .hero-visual-card {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
@@ -71,7 +71,6 @@
     margin-bottom: 10px;
 }
 
-/* Mobile Layout */
 @media screen and (max-width: 768px) {
     .contact-hero-minimal {
         padding: 100px 20px;
@@ -95,7 +94,7 @@
     }
 }
 
-/* --- PREMIUM GLASS CONNECT CARDS --- */
+
 .connect-glass-section {
     padding: 100px 20px;
     background: #050a05;
@@ -121,7 +120,6 @@
     transition: transform 0.4s ease, border-color 0.4s ease;
 }
 
-/* Hover Glow Aura */
 .glass-card-pro::before {
     content: "";
     position: absolute;
@@ -174,7 +172,7 @@
     font-weight: 600;
 }
 
-/* Mobile Responsive Lock */
+
 @media screen and (max-width: 768px) {
     .connect-grid-pro {
         grid-template-columns: 1fr;
@@ -186,7 +184,6 @@
     }
 }
 
-/* --- DISPATCH FORM PRO --- */
 .dispatch-section-pro {
     padding: 100px 20px;
     background: #050a05;
@@ -219,7 +216,7 @@
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Floating Label Animation */
+
 .input-field {
     position: relative;
     margin-bottom: 35px;
@@ -255,7 +252,7 @@
     color: #4CAF50;
 }
 
-/* Validation Feedback */
+
 .pro-form input:invalid:not(:placeholder-shown),
 .pro-form textarea:invalid:not(:placeholder-shown) {
     border-bottom: 1px solid #ff4d4d;
@@ -277,7 +274,7 @@
     display: block;
 }
 
-/* Button */
+
 .send-btn {
     background: #fff;
     color: #050a05;
@@ -297,7 +294,7 @@
     color: white;
 }
 
-/* Mobile Lock */
+
 @media screen and (max-width: 768px) {
     .dispatch-split-pro {
         grid-template-columns: 1fr;
@@ -308,7 +305,6 @@
     }
 }
 
-/* --- CINEMATIC DARK MAP --- */
 .map-premium-section {
     width: 100%;
     height: 450px;
@@ -323,18 +319,14 @@
     position: relative;
 }
 
-/* The Magic Hack: Map Filter */
+
 .map-container iframe {
-    /* invert(90%) -> White to Black
-       hue-rotate(120deg) -> Turns blue ocean to dark green
-       brightness(85%) -> Dims it
-       contrast(90%) -> Refines the edges
-    */
+   
     height: 450px;
     filter: invert(90%) hue-rotate(120deg) brightness(85%) contrast(90%);
 }
 
-/* Glass Overlay */
+
 .map-overlay {
     position: absolute;
     top: 0;
@@ -346,10 +338,10 @@
     justify-content: center;
     align-items: center;
     pointer-events: none;
-    /* Allows interacting with the map */
+   
 }
 
-/* Operational Badge */
+
 .map-glass-badge {
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
@@ -384,7 +376,7 @@
     }
 }
 
-/* --- SOCIAL TRIBE NEON CARDS --- */
+
 .social-tribe-section {
     background: #050a05;
     padding: 100px 20px;
@@ -416,7 +408,7 @@
     margin-bottom: 15px;
 }
 
-/* Neon Glow Effect on Hover */
+
 .instagram:hover {
     border-color: #E1306C;
     box-shadow: 0 0 20px rgba(225, 48, 108, 0.3);
@@ -445,7 +437,7 @@
     color: #888;
 }
 
-/* Mobile Lock */
+
 @media screen and (max-width: 600px) {
     .social-grid {
         grid-template-columns: 1fr;

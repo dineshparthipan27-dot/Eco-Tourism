@@ -1,8 +1,8 @@
-/* --- LUXURY EDITORIAL DESTINATIONS HERO (V3) --- */
+
 .dest-hero-v3 {
     position: relative;
     min-height: 85vh;
-    /* Gives massive breathing space */
+  
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,7 +11,7 @@
     padding: 120px 20px 60px 20px;
 }
 
-/* Moving Breathing Nature Canvas Background */
+
 .hero-canvas-bg {
     position: absolute;
     top: 0;
@@ -24,7 +24,6 @@
     animation: slowCanvasBreathing 30s infinite alternate ease-in-out;
 }
 
-/* Ambient Radial Glow */
 .hero-radial-glow {
     position: absolute;
     top: 50%;
@@ -55,7 +54,7 @@
     z-index: 2;
 }
 
-/* Typography Styles */
+
 .hero-tagline {
     color: #81C784;
     font-size: 0.95rem;
@@ -89,14 +88,14 @@
     margin: 0 auto 50px auto;
 }
 
-/* --- THE MODERN MULTI-SEGMENT SEARCH ENGINE --- */
+
 .eco-search-engine {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 100px;
-    /* Seamless continuous capsule shape */
+
     display: flex;
     padding: 10px;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
@@ -105,7 +104,6 @@
     margin-bottom: 30px;
 }
 
-/* Individual Segment Panels */
 .search-segment {
     flex: 1;
     padding: 10px 25px;
@@ -117,7 +115,7 @@
 
 .search-segment:nth-child(3) {
     border-right: none;
-    /* Removes separator before the button */
+   
 }
 
 .search-segment label {
@@ -148,7 +146,7 @@
     color: white;
 }
 
-/* Ultimate High-Action Button */
+
 .engine-search-btn {
     background: #4CAF50;
     color: white !important;
@@ -185,7 +183,6 @@
     transition: transform 0.3s ease;
 }
 
-/* Quick Tags Styling */
 .quick-eco-tags {
     display: flex;
     justify-content: center;
@@ -218,9 +215,6 @@
     transform: translateY(-2px);
 }
 
-/* ===================================================
-   📱 THE NATIVE APP-STYLE MOBILE RESPONSIVE ENGINE
-   =================================================== */
 @media screen and (max-width: 850px) {
     .dest-hero-v3 {
         min-height: 90vh;
@@ -236,7 +230,7 @@
         margin-bottom: 35px;
     }
 
-    /* Transform Capsule into a sleek Native App Card Layout */
+ 
     .eco-search-engine {
         flex-direction: column;
         border-radius: 24px;
@@ -255,7 +249,7 @@
 
     .search-segment:nth-child(3) {
         border-bottom: none;
-        /* No line before the button */
+    
     }
 
     .engine-search-btn {
@@ -263,7 +257,7 @@
         justify-content: center;
         height: 54px;
         border-radius: 14px;
-        /* Matches mobile UI card standards */
+        
     }
 }
 
@@ -282,10 +276,10 @@
     }
 }
 
-/* --- FEATURED HOTSPOTS PRO STYLES --- */
+
 .hotspots-premium-section {
     background-color: #0a140a;
-    /* Deep forest dark canvas */
+   
     padding: 120px 20px;
     width: 100%;
     overflow: hidden;
@@ -299,13 +293,12 @@
     margin: 60px auto 0 auto;
 }
 
-/* Premium Poster Card Structuring */
 .hotspot-card-pro {
     position: relative;
     border-radius: 24px;
     overflow: hidden;
     height: 480px;
-    /* Tall proportional layout */
+   
     background: #070d07;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -329,7 +322,7 @@
     transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Premium Category Glass Floating Badge */
+
 .hotspot-badge-pro {
     position: absolute;
     top: 20px;
@@ -348,7 +341,7 @@
     text-transform: uppercase;
 }
 
-/* Cinematic Dark Gradient Text Protection Layer */
+
 .card-content-pro {
     position: absolute;
     bottom: 0;
@@ -361,7 +354,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    /* Smooth transform animation logic */
+
     transform: translateY(145px);
     transition: transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -381,7 +374,7 @@
     margin-bottom: 20px;
 }
 
-/* Hidden elements expanded smoothly on desktop focus rules */
+
 .card-expanded-info {
     opacity: 0;
     transition: opacity 0.35s ease;
@@ -416,7 +409,7 @@
     font-weight: 400;
 }
 
-/* Internal Card Action Button */
+
 .hotspot-action-btn {
     background-color: #4CAF50;
     color: white;
@@ -433,7 +426,6 @@
     color: #070d07;
 }
 
-/* --- HOVER ACTIVATION MECHANICS --- */
 .hotspot-card-pro:hover {
     transform: translateY(-10px);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 20px rgba(76, 175, 80, 0.15);
@@ -441,7 +433,7 @@
 
 .hotspot-card-pro:hover .card-image-wrapper img {
     transform: scale(1.1);
-    /* Smooth visual parallax zoom */
+
 }
 
 .hotspot-card-pro:hover .card-content-pro {
@@ -451,12 +443,10 @@
 
 .hotspot-card-pro:hover .card-expanded-info {
     opacity: 1;
-    /* Fades in paragraph and buttons */
+    
 }
 
-/* ===================================================
-   📱 100% BULLETPROOF NATIVE MOBILE REFACTOR LOCKS
-   =================================================== */
+
 @media screen and (max-width: 768px) {
     .hotspots-premium-section {
         padding: 80px 20px;
@@ -464,18 +454,18 @@
 
     .hotspots-grid-pro {
         grid-template-columns: 1fr;
-        /* Rigid stack layout constraint */
+       
         gap: 30px;
         max-width: 450px;
-        /* Centers and limits mobile width card blowouts */
+        
     }
 
     .hotspot-card-pro {
         height: 420px;
-        /* Slightly compact profile on small screens */
+        
     }
 
-    /* On Mobile: Cancel hidden states since hover doesn't exist on touch screens */
+   
     .card-content-pro {
         transform: translateY(0) !important;
         background: linear-gradient(to top, rgba(7, 13, 7, 1) 0%, rgba(7, 13, 7, 0.85) 65%, transparent 100%);
@@ -498,7 +488,7 @@
         font-size: 0.85rem;
         margin-bottom: 15px;
         line-height: 1.5;
-        /* Line clamp to prevent long text from blowing up mobile heights */
+        
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
@@ -514,10 +504,9 @@
     }
 }
 
-/* --- EXPLORE BY ECO-ZONE (EXPANDING PILLARS V2) --- */
+
 .eco-zones-premium {
     background-color: #070d07;
-    /* Dark theme to match the rest of the page */
     padding: 120px 20px;
     width: 100%;
     overflow: hidden;
@@ -528,19 +517,19 @@
     width: 100%;
     max-width: 1100px;
     height: 500px;
-    /* Tall desktop panels */
+   
     margin: 0 auto;
     gap: 20px;
 }
 
-/* Individual Expanding Panel */
+
 .eco-panel {
     position: relative;
     background-size: cover;
     background-position: center;
     border-radius: 30px;
     flex: 1;
-    /* Default flex value */
+
     transition: flex 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
     cursor: pointer;
     overflow: hidden;
@@ -548,7 +537,7 @@
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Dark cinematic overlay */
+
 .panel-overlay {
     position: absolute;
     top: 0;
@@ -560,7 +549,7 @@
     transition: background 0.5s ease;
 }
 
-/* Center Icon (Visible when not hovered) */
+
 .panel-icon {
     position: absolute;
     top: 40%;
@@ -572,11 +561,10 @@
     filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.5));
 }
 
-/* Inner Content Wrapper */
 .panel-content {
     position: absolute;
     bottom: -50px;
-    /* Hidden slightly lower */
+  
     left: 0;
     width: 100%;
     padding: 30px;
@@ -585,7 +573,7 @@
     transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Glassmorphism Text Box */
+
 .panel-glass-box {
     background: rgba(20, 40, 20, 0.6);
     backdrop-filter: blur(10px);
@@ -601,7 +589,6 @@
     font-size: 1.6rem;
     margin-bottom: 10px;
     white-space: nowrap;
-    /* Prevents text wrap during animation */
 }
 
 .panel-glass-box p {
@@ -629,10 +616,10 @@
     color: #ffffff;
 }
 
-/* --- THE HOVER MAGIC (DESKTOP ONLY) --- */
+
 .eco-panel:hover {
     flex: 3;
-    /* Expands to take up more space */
+   
     box-shadow: 0 20px 50px rgba(76, 175, 80, 0.2);
     border-color: rgba(76, 175, 80, 0.4);
 }
@@ -644,18 +631,16 @@
 .eco-panel:hover .panel-icon {
     opacity: 0;
     transform: translate(-50%, -100%);
-    /* Moves up and fades out */
+    
 }
 
 .eco-panel:hover .panel-content {
     bottom: 0;
     opacity: 1;
-    /* Slides up and fades in */
+  
 }
 
-/* =========================================
-   📱 MOBILE RESPONSIVENESS (VERTICAL STACK)
-   ========================================= */
+
 @media screen and (max-width: 992px) {
     .eco-accordion-container {
         height: 400px;
@@ -667,23 +652,21 @@
         padding: 80px 20px;
     }
 
-    /* Change flex row to vertical column */
+    
     .eco-accordion-container {
         flex-direction: column;
         height: auto;
         gap: 25px;
     }
 
-    /* Lock panels to fixed heights, disable flex expansion */
+    
     .eco-panel {
         flex: none !important;
-        /* Forces off the hover expand */
         width: 100%;
         height: 280px;
         border-radius: 20px;
     }
 
-    /* On mobile, always show the content, hide the big center icon */
     .panel-icon {
         display: none;
     }
@@ -702,7 +685,7 @@
     .panel-glass-box h3 {
         font-size: 1.4rem;
         white-space: normal;
-        /* Allow text wrap on mobile */
+      
     }
 
     .panel-glass-box p {
@@ -710,13 +693,12 @@
     }
 }
 
-/* --- HIDDEN GEMS V2 (LUXURY OVERLAP & GLASSMORPHISM) --- */
 .gems-premium-section {
     background-color: #0a140a;
-    /* Deep forest dark background */
+  
     padding: 120px 20px;
     overflow: hidden;
-    /* Prevents horizontal scroll from animations */
+   
 }
 
 .gems-grid-pro {
@@ -728,7 +710,7 @@
     margin: 0 auto;
 }
 
-/* --- Visual Gallery (Left Side) --- */
+
 .gems-visuals {
     position: relative;
     width: 100%;
@@ -754,21 +736,21 @@
 
 .gem-img-main:hover img {
     transform: scale(1.08);
-    /* Slow cinematic zoom */
+   
 }
 
-/* Overlapping Secondary Image */
+
 .gem-img-secondary {
     position: absolute;
     bottom: 20px;
     right: 0;
     width: 55%;
-    /* Slightly smaller */
+   
     height: 300px;
     border-radius: 20px;
     overflow: hidden;
     border: 8px solid #0a140a;
-    /* Creates a cutout effect against the background */
+    
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
     z-index: 2;
 }
@@ -779,7 +761,7 @@
     object-fit: cover;
 }
 
-/* Floating Animation */
+
 .animate-float-slow {
     animation: floatOverlap 6s ease-in-out infinite;
 }
@@ -796,7 +778,7 @@
     }
 }
 
-/* Secret Floating Badge */
+
 .gem-secret-badge {
     position: absolute;
     top: 30px;
@@ -813,7 +795,7 @@
     letter-spacing: 1px;
 }
 
-/* --- Content & Glass Box (Right Side) --- */
+
 .gems-desc {
     color: #cccccc;
     font-size: 1.1rem;
@@ -821,7 +803,7 @@
     margin-bottom: 40px;
 }
 
-/* Frosted Glass Rules Box */
+
 .gem-rules-glass {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(15px);
@@ -870,7 +852,7 @@
     font-size: 1.2rem;
 }
 
-/* Specific Action Button */
+
 .gems-action-btn {
     display: inline-block;
     background-color: transparent;
@@ -890,9 +872,7 @@
     transform: translateX(5px);
 }
 
-/* =========================================
-   📱 MOBILE RESPONSIVE LOGIC (BULLETPROOF)
-   ========================================= */
+
 @media screen and (max-width: 992px) {
     .gems-grid-pro {
         gap: 40px;
@@ -913,13 +893,12 @@
         padding: 80px 20px;
     }
 
-    /* Stack visual and text vertically */
+   
     .gems-grid-pro {
         grid-template-columns: 1fr;
         gap: 50px;
     }
 
-    /* Resize visual gallery for small screens */
     .gems-visuals {
         height: 400px;
         max-width: 500px;
@@ -949,7 +928,6 @@
         text-align: center;
     }
 
-    /* Align lists left even when container is centered */
     .gem-rules-glass {
         text-align: left;
         padding: 25px 20px;
@@ -977,7 +955,7 @@
     }
 }
 
-/* --- INTERACTIVE TRAVEL CHECKLIST V2 --- */
+
 .checklist-premium {
     background-color: #070d07;
     /* Consistent dark base */
@@ -989,14 +967,13 @@
 
 .checklist-wrapper {
     max-width: 750px;
-    /* Kept slim for reading comfort */
+   
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* Base State of Checklist Card */
 .check-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1014,14 +991,14 @@
     overflow: hidden;
 }
 
-/* Hover effect on desktop */
+
 .check-card:hover {
     background: rgba(255, 255, 255, 0.06);
     transform: translateX(10px);
-    /* Slight nudge to the right */
+    
 }
 
-/* Circle Checkbox */
+
 .check-circle {
     width: 35px;
     height: 35px;
@@ -1036,14 +1013,14 @@
 
 .check-mark {
     color: transparent;
-    /* Hidden by default */
+
     font-size: 1.2rem;
     font-weight: bold;
     transform: scale(0);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Text Content */
+
 .check-content h3 {
     color: #ffffff;
     font-size: 1.2rem;
@@ -1060,12 +1037,10 @@
     transition: color 0.3s ease;
 }
 
-/* =========================================
-   ✅ COMPLETED (CLICKED) STATE MAGIC
-   ========================================= */
+
 .check-card.completed {
     background: rgba(76, 175, 80, 0.1);
-    /* Soft green background */
+   
     border-color: #4CAF50;
     box-shadow: 0 10px 25px rgba(76, 175, 80, 0.2);
 }
@@ -1079,22 +1054,22 @@
 .check-card.completed .check-mark {
     color: #ffffff;
     transform: scale(1);
-    /* Pops in */
+    
 }
 
 .check-card.completed .check-content h3 {
     color: #81C784;
-    /* Turns green */
+   
     text-decoration: line-through;
     text-decoration-color: rgba(129, 199, 132, 0.4);
 }
 
 .check-card.completed .check-content p {
     color: #777777;
-    /* Dims out completed text */
+   
 }
 
-/* JS Bounce Animation Class */
+
 .bounce-anim {
     animation: clickBounce 0.3s ease;
 }
@@ -1113,9 +1088,7 @@
     }
 }
 
-/* =========================================
-   📱 MOBILE RESPONSIVENESS (TOUCH SAFE)
-   ========================================= */
+
 @media screen and (max-width: 768px) {
     .checklist-premium {
         padding: 80px 20px;
@@ -1127,12 +1100,12 @@
         border-radius: 16px;
     }
 
-    /* Disable the hover nudge on mobile, rely on tap instead */
+   
     .check-card:hover {
         transform: none;
     }
 
-    /* Maintain checked nudge for visual feedback on mobile */
+  
     .check-card.completed {
         transform: scale(0.98);
     }
@@ -1155,10 +1128,9 @@
     }
 }
 
-/* --- TRAIL DIFFICULTY LEVELS (GAMIFIED UI) --- */
 .expedition-levels {
     background-color: #050a05;
-    /* Extra dark background to make neon colors pop */
+    
     padding: 120px 20px;
     position: relative;
     overflow: hidden;
@@ -1171,10 +1143,9 @@
     max-width: 1100px;
     margin: 0 auto;
     align-items: center;
-    /* Aligns items to center for the featured card lift */
+  
 }
 
-/* Base Card Styling */
 .level-card {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -1189,14 +1160,14 @@
 
 .featured-level {
     transform: scale(1.05);
-    /* Makes the middle card slightly bigger */
+   
     background: rgba(255, 255, 255, 0.04);
     border-color: rgba(255, 215, 0, 0.2);
-    /* Gold subtle border */
+  
     z-index: 2;
 }
 
-/* Color Themes for each level */
+
 .level-green:hover {
     border-color: #4CAF50;
     box-shadow: 0 20px 40px rgba(76, 175, 80, 0.15);
@@ -1242,7 +1213,7 @@
     background: #F44336;
 }
 
-/* Level Badge */
+
 .level-badge {
     display: inline-block;
     padding: 6px 15px;
@@ -1254,7 +1225,7 @@
     margin-bottom: 20px;
 }
 
-/* Card Typography */
+
 .level-card h3 {
     color: #ffffff;
     font-size: 1.8rem;
@@ -1268,10 +1239,9 @@
     line-height: 1.6;
     margin-bottom: 30px;
     min-height: 70px;
-    /* Keeps cards equal height */
+
 }
 
-/* Progress Bar Metrics (The Gamified Part) */
 .metrics-box {
     margin-bottom: 35px;
 }
@@ -1301,12 +1271,11 @@
     height: 100%;
     border-radius: 10px;
     width: 0;
-    /* Starts at 0 for animation */
-    /* Animation is triggered by AOS or loads normally */
+   
     transition: width 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Call to Action Button inside Card */
+
 .level-btn {
     display: block;
     text-align: center;
@@ -1326,13 +1295,11 @@
     border-color: #ffffff;
 }
 
-/* =========================================
-   📱 MOBILE RESPONSIVENESS (VERTICAL STACK)
-   ========================================= */
+
 @media screen and (max-width: 992px) {
     .featured-level {
         transform: scale(1);
-        /* Removes scaling on tablet/mobile to prevent overlap */
+       
     }
 
     .level-gold:hover {
@@ -1349,7 +1316,7 @@
         grid-template-columns: 1fr;
         gap: 30px;
         max-width: 450px;
-        /* Limits width on mobile so it doesn't stretch too thin */
+     
     }
 
     .level-card {
@@ -1362,7 +1329,7 @@
 
     .level-card p {
         min-height: auto;
-        /* Lets text flow naturally on mobile */
+    
         margin-bottom: 25px;
     }
 
@@ -1371,7 +1338,6 @@
     }
 }
 
-/* --- FINAL CTA BANNER (IMMERSIVE SPOTLIGHT) --- */
 .dest-final-cta {
     position: relative;
     padding: 140px 20px;
@@ -1382,14 +1348,13 @@
     align-items: center;
 }
 
-/* Ambient Moving Spotlight Background */
 .cta-spotlight-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Dark overlay + Spotlight + Forest Image */
+    
     background: radial-gradient(circle at center, rgba(76, 175, 80, 0.15) 0%, rgba(5, 10, 5, 0.9) 70%),
         url('asset/ei1.webp') center/cover no-repeat;
     z-index: 1;
@@ -1416,7 +1381,7 @@
     justify-content: center;
 }
 
-/* Premium Glassmorphism Card */
+
 .cta-glass-card {
     background: rgba(10, 20, 10, 0.65);
     backdrop-filter: blur(20px);
@@ -1437,7 +1402,7 @@
     box-shadow: 0 40px 70px rgba(0, 0, 0, 0.6), 0 0 60px rgba(76, 175, 80, 0.15);
 }
 
-/* Live Status Badge (FOMO Trigger) */
+
 .live-status-badge {
     display: inline-flex;
     align-items: center;
@@ -1452,7 +1417,7 @@
     margin-bottom: 25px;
 }
 
-/* Red Pulsing Dot Animation */
+
 .pulsing-dot {
     width: 10px;
     height: 10px;
@@ -1479,7 +1444,7 @@
     }
 }
 
-/* CTA Typography */
+
 .cta-glass-card h2 {
     font-size: 3.2rem;
     color: #ffffff;
@@ -1505,7 +1470,7 @@
     margin-right: auto;
 }
 
-/* Action Group */
+
 .cta-action-group {
     display: flex;
     flex-direction: column;
@@ -1513,7 +1478,7 @@
     gap: 15px;
 }
 
-/* Glowing Primary Button */
+
 .btn-glow-primary {
     display: inline-block;
     background: #4CAF50;
@@ -1534,16 +1499,14 @@
     box-shadow: 0 15px 35px rgba(76, 175, 80, 0.5), 0 0 20px rgba(76, 175, 80, 0.2);
 }
 
-/* Trust Indicator Text */
+
 .secure-text {
     font-size: 0.85rem;
     color: #888888;
     font-weight: 500;
 }
 
-/* =========================================
-   📱 MOBILE RESPONSIVENESS (PERFECT SCALING)
-   ========================================= */
+
 @media screen and (max-width: 768px) {
     .dest-final-cta {
         padding: 100px 20px;
@@ -1568,7 +1531,7 @@
         padding: 6px 15px;
     }
 
-    /* Make button stretch to full width for easy thumb tap */
+  
     .btn-glow-primary {
         width: 100%;
         padding: 16px 20px;

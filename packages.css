@@ -1,8 +1,7 @@
-/* --- PREMIUM PACKAGES HERO BANNER --- */
+
 .pkg-hero-premium {
     position: relative;
     min-height: 85vh;
-    /* Massive cinematic breathing space */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,7 +11,7 @@
     padding-top: 110px;
 }
 
-/* Deep Cinematic Background Animation */
+
 .pkg-hero-bg-anim {
     position: absolute;
     top: 0;
@@ -35,7 +34,6 @@
     }
 }
 
-/* Center Radial Glow (Makes text pop) */
 .pkg-hero-glow {
     position: absolute;
     top: 50%;
@@ -56,7 +54,6 @@
     max-width: 850px;
 }
 
-/* Floating Glassmorphism Trust Badge */
 .pkg-trust-badge {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(12px);
@@ -94,7 +91,6 @@
     }
 }
 
-/* Main Typography */
 .pkg-text-wrapper {
     margin-bottom: 40px;
 }
@@ -131,7 +127,7 @@
     margin: 0 auto;
 }
 
-/* Animated Mouse Scroll Indicator */
+
 .scroll-indicator-wrap {
     display: flex;
     flex-direction: column;
@@ -183,9 +179,6 @@
     }
 }
 
-/* =========================================
-   📱 100% BULLETPROOF MOBILE RESPONSIVE
-   ========================================= */
 @media screen and (max-width: 768px) {
     .pkg-hero-premium {
         min-height: 75vh;
@@ -193,7 +186,7 @@
         padding-bottom: 60px;
     }
 
-    /* Disable heavy animations on mobile for smooth scrolling */
+   
     .pkg-hero-bg-anim {
         background-attachment: scroll !important;
         animation: none;
@@ -201,14 +194,14 @@
 
     .pkg-hero-glow {
         width: 100%;
-        /* Prevents horizontal overflow */
+        
     }
 
     .pkg-trust-badge {
         font-size: 0.85rem;
         padding: 8px 20px;
         margin-bottom: 25px;
-        /* Keep it centered, stop floating out of bounds */
+      
         animation: none;
         transform: translateY(0);
     }
@@ -228,7 +221,7 @@
         padding: 0 10px;
     }
 
-    /* Hide scroll indicator on very small screens to save space */
+
     .scroll-indicator-wrap {
         transform: scale(0.8);
     }
@@ -240,10 +233,9 @@
     }
 }
 
-/* --- PREMIUM PRICING PLANS (GLASSMORPHISM) --- */
+
 .pricing-glass-section {
     background-color: #050a05;
-    /* Deep dark base */
     padding: 120px 20px;
     position: relative;
     overflow: hidden;
@@ -255,7 +247,7 @@
     z-index: 2;
 }
 
-/* Ambient Glow Blobs for Glass Contrast */
+
 .glow-blob {
     position: absolute;
     width: 400px;
@@ -279,7 +271,6 @@
     background: #81C784;
 }
 
-/* Grid Layout */
 .glass-pricing-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -289,10 +280,9 @@
     margin: 0 auto;
 }
 
-/* The Glassmorphism Card Element */
+
 .glass-price-card {
     background: rgba(255, 255, 255, 0.02);
-    /* Almost transparent */
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -304,7 +294,7 @@
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
-/* Hover Physics */
+
 .glass-price-card:hover {
     transform: translateY(-15px);
     border-color: rgba(76, 175, 80, 0.4);
@@ -312,7 +302,7 @@
     background: rgba(255, 255, 255, 0.04);
 }
 
-/* The Highlighted Featured Middle Card */
+
 .featured-glass-card {
     transform: scale(1.06);
     background: rgba(20, 40, 20, 0.6);
@@ -325,7 +315,7 @@
     transform: scale(1.06) translateY(-15px);
 }
 
-/* Popular Badge */
+
 .popular-badge-pro {
     position: absolute;
     top: -16px;
@@ -342,7 +332,6 @@
     box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
 }
 
-/* Typography inside card */
 .card-header-pro h3 {
     color: #ffffff;
     font-size: 1.6rem;
@@ -360,7 +349,7 @@
 
 .highlight-price {
     color: #81C784;
-    /* Green pop for featured */
+  
 }
 
 .price-pro span {
@@ -384,7 +373,7 @@
     height: 45px;
 }
 
-/* Features List Styling */
+
 .glass-features {
     list-style: none;
     padding: 0;
@@ -411,7 +400,7 @@
     font-size: 1rem;
 }
 
-/* Call to Action Buttons */
+
 .glass-btn-outline {
     background: transparent;
     color: #ffffff;
@@ -448,9 +437,7 @@
     box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
 }
 
-/* =========================================
-   📱 100% MOBILE RESPONSIVE STACK LOCK
-   ========================================= */
+
 @media screen and (max-width: 1024px) {
     .glass-pricing-grid {
         gap: 20px;
@@ -463,15 +450,14 @@
 
 @media screen and (max-width: 992px) {
 
-    /* Switch to single column stack on tablets/mobiles */
+   
     .glass-pricing-grid {
         grid-template-columns: 1fr;
         max-width: 450px;
-        /* Restrict width to avoid stretched cards */
+      
         gap: 40px;
     }
 
-    /* Remove the middle card scale up so it stacks cleanly */
     .featured-glass-card {
         transform: scale(1);
     }
@@ -503,7 +489,7 @@
         margin-bottom: 25px;
     }
 
-    /* Reduce blob sizes to prevent horizontal scroll issues on mobile */
+
     .glow-blob {
         width: 250px;
         height: 250px;
@@ -518,16 +504,15 @@
     }
 }
 
-/* --- WHAT'S INCLUDED (HOLOGRAPHIC TOKENS) --- */
+
 .eco-perks-premium {
     background-color: #070d07;
-    /* Deep canvas to match the theme */
     padding: 120px 20px;
     position: relative;
     overflow: hidden;
 }
 
-/* Background Ambient Styling */
+
 .eco-perks-premium::before {
     content: '';
     position: absolute;
@@ -547,7 +532,7 @@
     margin: 0 auto;
 }
 
-/* The Perk Token Card */
+
 .perk-card-pro {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -558,7 +543,6 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Hover Physics */
 .perk-card-pro:hover {
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.04);
@@ -566,7 +550,7 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(76, 175, 80, 0.05);
 }
 
-/* Glowing Icon Wrapper */
+
 .perk-icon-wrapper {
     width: 80px;
     height: 80px;
@@ -586,7 +570,6 @@
     transition: transform 0.4s ease;
 }
 
-/* Icon Hover Glow Magic */
 .perk-card-pro:hover .perk-icon-wrapper {
     background: linear-gradient(135deg, rgba(76, 175, 80, 0.25), rgba(46, 125, 50, 0.1));
     border-color: #4CAF50;
@@ -597,7 +580,7 @@
     transform: scale(1.15) rotate(5deg);
 }
 
-/* Floating Animations (Staggered for organic feel) */
+
 .animate-float {
     animation: gentleFloat 4s ease-in-out infinite;
 }
@@ -622,7 +605,7 @@
     }
 }
 
-/* Text Styling */
+
 .perk-card-pro h4 {
     color: #ffffff;
     font-size: 1.3rem;
@@ -638,12 +621,10 @@
     margin: 0;
 }
 
-/* =========================================
-   📱 100% BUG-FREE MOBILE RESPONSIVE
-   ========================================= */
+
 @media screen and (max-width: 992px) {
 
-    /* Switch to 2 columns on tablets */
+   
     .perks-grid-pro {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
@@ -655,7 +636,7 @@
         padding: 80px 20px;
     }
 
-    /* Switch to single column stack on mobile */
+   
     .perks-grid-pro {
         grid-template-columns: 1fr;
         max-width: 400px;
@@ -669,7 +650,6 @@
         width: 70px;
         height: 70px;
         margin-bottom: 20px;
-        /* Disable floating animation on mobile to save battery and avoid clipping */
         animation: none;
         transform: translateY(0);
     }
@@ -687,10 +667,9 @@
     }
 }
 
-/* --- GROUP & CORPORATE EXPEDITIONS (CINEMATIC 3D SPLIT) --- */
+
 .corp-premium-section {
     background-color: #0a140a;
-    /* Deep forest dark */
     padding: 120px 20px;
     overflow: hidden;
 }
@@ -704,7 +683,7 @@
     margin: 0 auto;
 }
 
-/* --- Left Side: Visuals --- */
+
 .corp-visuals {
     position: relative;
     width: 100%;
@@ -715,7 +694,6 @@
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    /* Creates a subtle border framing */
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -727,16 +705,14 @@
     transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Parallax Zoom on Hover */
 .corp-img-box:hover img {
     transform: scale(1.08);
 }
 
-/* Floating Glass Badge Over Image */
 .corp-glass-badge {
     position: absolute;
     bottom: -25px;
-    /* Overlaps outside the image box */
+
     right: 30px;
     background: rgba(20, 40, 20, 0.7);
     backdrop-filter: blur(15px);
@@ -774,7 +750,7 @@
     }
 }
 
-/* --- Right Side: Content --- */
+
 .corp-subtitle {
     color: #81C784;
     text-transform: uppercase;
@@ -806,7 +782,6 @@
     margin-bottom: 35px;
 }
 
-/* Premium Styled List */
 .corp-features-list {
     list-style: none;
     padding: 0;
@@ -843,7 +818,7 @@
     border: 1px solid rgba(76, 175, 80, 0.3);
 }
 
-/* Glowing Magnetic Button */
+
 .corp-btn-glow {
     display: inline-block;
     background: #4CAF50;
@@ -864,9 +839,7 @@
     box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2), 0 0 15px rgba(76, 175, 80, 0.2);
 }
 
-/* =========================================
-   📱 NATIVE MOBILE RESPONSIVE REFACTOR
-   ========================================= */
+
 @media screen and (max-width: 992px) {
     .corp-split-grid {
         gap: 50px;
@@ -882,7 +855,7 @@
         padding: 80px 20px;
     }
 
-    /* Stack visual and text vertically */
+  
     .corp-split-grid {
         grid-template-columns: 1fr;
         gap: 60px;
@@ -890,27 +863,23 @@
 
     .corp-img-box img {
         height: 320px;
-        /* Reduce height for mobile screens */
+     
     }
 
-    /* Reposition badge to stay within screen boundaries */
     .corp-glass-badge {
         bottom: -20px;
         right: 50%;
         transform: translateX(50%);
-        /* Centered nicely below image */
         width: 85%;
-        /* Ensures it doesn't bleed off edges */
         justify-content: center;
         padding: 12px 15px;
         font-size: 0.85rem;
-        /* Disable float animation on mobile to prevent layout shift */
         animation: none;
     }
 
     .corp-content {
         text-align: left;
-        /* Kept left-aligned for reading ease of the list */
+      
     }
 
     .corp-title {
@@ -927,7 +896,7 @@
         margin-bottom: 15px;
     }
 
-    /* Full width button for thumb-friendly tapping */
+
     .corp-btn-glow {
         width: 100%;
         text-align: center;
@@ -935,10 +904,9 @@
     }
 }
 
-/* --- TRAVELER TESTIMONIALS (FOCUS GRID) --- */
+
 .reviews-premium-section {
     background-color: #070d07;
-    /* Deep forest dark */
     padding: 120px 20px;
     overflow: hidden;
 }
@@ -951,7 +919,7 @@
     margin: 0 auto;
 }
 
-/* Glassmorphism Review Card */
+
 .review-card-pro {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -966,21 +934,19 @@
     overflow: hidden;
 }
 
-/* Giant Watermark Quote Icon */
+
 .quote-watermark {
     position: absolute;
     top: -20px;
     right: 20px;
     font-size: 8rem;
     color: rgba(76, 175, 80, 0.05);
-    /* Extremely subtle green */
     font-family: serif;
     line-height: 1;
     pointer-events: none;
     z-index: 0;
 }
 
-/* Stars & Text (Relative Z-index to sit above watermark) */
 .stars-pro {
     font-size: 1.1rem;
     margin-bottom: 20px;
@@ -999,7 +965,6 @@
     flex-grow: 1;
 }
 
-/* Reviewer Profile Section */
 .reviewer-info {
     display: flex;
     align-items: center;
@@ -1033,17 +998,14 @@
     letter-spacing: 1px;
 }
 
-/* --- THE HOVER FOCUS MAGIC (DESKTOP ONLY) --- */
 @media (hover: hover) {
     .reviews-grid-pro:hover .review-card-pro {
-        /* When the grid is hovered, dim all cards by default */
         opacity: 0.3;
         transform: scale(0.95);
         filter: blur(2px);
     }
 
     .reviews-grid-pro .review-card-pro:hover {
-        /* Un-dim and pop out the specifically hovered card */
         opacity: 1;
         transform: scale(1.05) translateY(-10px);
         filter: blur(0);
@@ -1054,9 +1016,6 @@
     }
 }
 
-/* =========================================
-   📱 MOBILE RESPONSIVENESS (VERTICAL STACK)
-   ========================================= */
 @media screen and (max-width: 992px) {
     .reviews-grid-pro {
         gap: 20px;
@@ -1072,7 +1031,6 @@
         padding: 80px 20px;
     }
 
-    /* Stack to single column */
     .reviews-grid-pro {
         grid-template-columns: 1fr;
         max-width: 450px;
