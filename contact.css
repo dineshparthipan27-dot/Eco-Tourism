@@ -61,6 +61,9 @@
     color: #fff;
     margin-bottom: 15px;
 }
+.visual-card-inner p{
+    color: white;
+}
 
 .tel-link {
     font-size: 1.8rem;
@@ -94,7 +97,17 @@
     }
 }
 
+.dispatch-info p{
+    color: #4CAF50;
+}
 
+.kicker-pro {
+    color: #4CAF50;
+}
+
+.section-title.text-white{
+    color: #4CAF50;
+}
 .connect-glass-section {
     padding: 100px 20px;
     background: #050a05;
