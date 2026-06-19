@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost in the Wilderness | 404 Error</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+        body {
+            background-color: #070d07;
+            
+            color: #ffffff;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin: 0;
+            padding: 0 20px;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .error-container {
+            position: relative;
+            max-width: 600px;
+            z-index: 2;
+        }
+
+       
+        .error-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(76, 175, 80, 0.15) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+       
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #4CAF50, #81C784);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulseGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 10px rgba(76, 175, 80, 0.2));
+            }
+
+            100% {
+                transform: scale(1.05);
+                filter: drop-shadow(0 0 25px rgba(76, 175, 80, 0.5));
+            }
+        }
+
+        
+        .error-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: floatCompass 4s ease-in-out infinite;
+        }
+
+        @keyframes floatCompass {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(15deg);
+            }
+        }
+
+        .error-title {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .error-desc {
+            color: #cccccc;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        
+        .error-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .error-btn {
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-home {
+            background-color: #4CAF50;
+            color: white;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .btn-home:hover {
+            background-color: #ffffff;
+            color: #070d07;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-back {
+            background-color: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-back:hover {
+            border-color: #4CAF50;
+            color: #4CAF50;
+            transform: translateY(-3px);
+        }
+
+       
+        @media screen and (max-width: 768px) {
+            .error-code {
+                font-size: 6rem;
+            }
+
+            .error-title {
+                font-size: 1.8rem;
+            }
+
+            .error-desc {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+
+            .error-actions {
+                flex-direction: column;
+               
+                gap: 15px;
+                width: 100%;
+            }
+
+            .error-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .error-icon {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="error-container">
+        
+        <div class="error-icon">🧭</div>
+
+       
+        <div class="error-code">404</div>
+
+        <h1 class="error-title">Lost in the Wilderness?</h1>
+        <p class="error-desc">
+            The trail you are looking for doesn't exist or has been reclaimed by nature. Let's get you back to the base
+            camp safely.
+        </p>
+
+        <div class="error-actions">
+            <a href="index.html" class="error-btn btn-home">Back to Base Camp (Home)</a>
+            <a href="javascript:history.back()" class="error-btn btn-back">Go Back</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

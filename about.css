@@ -1,0 +1,1171 @@
+
+.premium-hero {
+    position: relative;
+    height: 75vh;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+.hero-bg-anim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+ 
+    background: linear-gradient(to bottom, rgba(10, 25, 10, 0.7), rgba(20, 40, 20, 0.9)),
+        url('./asset/de3.webp') center/cover;
+    z-index: -1;
+    animation: panBg 20s infinite alternate linear;
+}
+
+@keyframes panBg {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+
+    100% {
+        transform: scale(1.15) translate(-15px, 10px);
+    }
+}
+
+/* Content Typography */
+.about-hero-content {
+    max-width: 800px;
+    padding: 0 20px;
+    z-index: 2;
+}
+
+.hero-subtitle {
+    color: #a5d6a7;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Gradient Text Effect */
+.hero-title span {
+    background: linear-gradient(90deg, #4CAF50, #81C784);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-hero-content p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Floating Glassmorphism Badges */
+.floating-eco-badge {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    z-index: 2;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.badge-1 {
+    top: 25%;
+    left: 10%;
+    animation: floatUpDown 4s ease-in-out infinite;
+}
+
+.badge-2 {
+    bottom: 30%;
+    right: 8%;
+    animation: floatUpDown 5s ease-in-out infinite reverse;
+}
+
+@keyframes floatUpDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Animated Scroll Indicator (Mouse) */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    text-decoration: none;
+    color: #aaa;
+    z-index: 2;
+    transition: color 0.3s;
+}
+
+.scroll-indicator:hover {
+    color: #4CAF50;
+}
+
+.mouse {
+    width: 26px;
+    height: 42px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto 10px auto;
+    position: relative;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background: #4CAF50;
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollWheel 2s infinite;
+}
+
+@keyframes scrollWheel {
+    0% {
+        top: 8px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 20px;
+        opacity: 0;
+    }
+}
+
+.scroll-text {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media screen and (max-width: 768px) {
+    .premium-hero {
+        height: 90vh;
+        /* Adjust for mobile screens */
+        padding-top: 120px;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .about-hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Adjust Badge Positions for Mobile so they don't block text */
+    .badge-1 {
+        top: 25%;
+        left: 5%;
+        font-size: 0.75rem;
+        padding: 8px 15px;
+    }
+
+    .badge-2 {
+        bottom: 25%;
+        right: 5%;
+        font-size: 0.75rem;
+        padding: 8px 15px;
+    }
+
+    .scroll-indicator {
+        bottom: 20px;
+    }
+}
+
+/* --- OUR STORY V3 (LUXURY EDITORIAL OVERLAP) --- */
+.premium-story {
+    background-color: #0a140a;
+    /* Deep luxury dark green/black */
+    color: #ffffff;
+    overflow-x: hidden;
+    padding: 120px 20px;
+}
+
+.text-white {
+    color: #ffffff !important;
+}
+
+.story-heading {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.story-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    /* Space between each story block */
+}
+
+/* Individual Story Block */
+.story-block {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.story-block.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Image Container (Takes up 55% width) */
+.story-img-container {
+    width: 55%;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.story-img-container img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.story-block:hover .story-img-container img {
+    transform: scale(1.08);
+    /* Cinematic slow zoom on hover */
+}
+
+/* Content Box (Glassmorphism & Overlap) */
+.story-content-box {
+    width: 50%;
+    /* Takes up 50% width */
+    background: rgba(255, 255, 255, 0.05);
+    /* Frosted Glass */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 50px 40px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+    margin-left: -5%;
+    /* THE OVERLAP MAGIC: Pulls text box over the image */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+    overflow: hidden;
+}
+
+/* Reverse overlap for the reversed block */
+.story-block.reverse .story-content-box {
+    margin-left: 0;
+    margin-right: -5%;
+    /* Overlaps from the right side */
+}
+
+/* Hover effect for the text box */
+.story-block:hover .story-content-box {
+    transform: translateY(-10px);
+    border-color: rgba(76, 175, 80, 0.4);
+    /* Green subtle glow border */
+}
+
+/* Huge Watermark Year Text */
+.watermark-year {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    font-size: 7rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.03);
+    /* Almost invisible */
+    line-height: 1;
+    z-index: -1;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Text Styling inside Box */
+.story-content-box h3 {
+    font-size: 2rem;
+    color: #81C784;
+    /* Soft eco green */
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.story-content-box p {
+    color: #cccccc;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* =========================================
+   📱 MOBILE RESPONSIVENESS (PERFECT STACK)
+   ========================================= */
+@media screen and (max-width: 992px) {
+    .story-img-container {
+        width: 60%;
+    }
+
+    .story-content-box {
+        width: 45%;
+        padding: 40px 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .premium-story {
+        padding: 80px 20px;
+    }
+
+    .story-wrapper {
+        gap: 60px;
+    }
+
+    /* Stack them vertically on mobile */
+    .story-block,
+    .story-block.reverse {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Make both full width */
+    .story-img-container,
+    .story-content-box {
+        width: 100%;
+    }
+
+    .story-img-container img {
+        height: 300px;
+    }
+
+    /* Vertical Overlap Magic for Mobile */
+    .story-content-box,
+    .story-block.reverse .story-content-box {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: -40px;
+        /* Pulls the text box up to overlap the image from the bottom */
+        padding: 30px 20px;
+    }
+
+    .story-content-box h3 {
+        font-size: 1.6rem;
+    }
+
+    .story-content-box p {
+        font-size: 1rem;
+    }
+
+    .watermark-year {
+        font-size: 5rem;
+        top: 0;
+        right: 0;
+    }
+}
+
+/* --- MISSION & VISION V2 (ECO-LUXURY GLASSMORPHISM) --- */
+.mv-premium {
+    position: relative;
+    padding: 120px 20px;
+    background-color: #070d07;
+    /* Ultra dark green, matches previous section */
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Ambient Background Glow (Top Left & Bottom Right) */
+.mv-premium::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 50%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(76, 175, 80, 0.08) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.mv-premium::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    right: -10%;
+    width: 50%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(46, 125, 50, 0.08) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.relative-z {
+    position: relative;
+    z-index: 2;
+}
+
+.mv-premium-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 60px auto 0 auto;
+}
+
+/* Premium Glassmorphism Card */
+.mv-glass-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    /* Almost transparent */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 60px 50px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Internal Glowing Blobs for Magic Hover Effect */
+.mv-glow-blob {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: #4CAF50;
+    filter: blur(60px);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: -1;
+}
+
+.blob-1 {
+    top: -30px;
+    left: -30px;
+}
+
+.blob-2 {
+    bottom: -30px;
+    right: -30px;
+}
+
+/* The Hover Magic */
+.mv-glass-card:hover {
+    transform: translateY(-15px);
+    border-color: rgba(76, 175, 80, 0.4);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 20px rgba(76, 175, 80, 0.1);
+}
+
+/* Show the blobs on hover */
+.mv-glass-card:hover .mv-glow-blob {
+    opacity: 0.4;
+    transform: scale(1.5);
+}
+
+/* Floating Animated Icons */
+.mv-icon-wrapper {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 30px auto;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.15), rgba(46, 125, 50, 0.05));
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    transition: transform 0.5s ease;
+}
+
+.mv-glass-card:hover .mv-icon-wrapper {
+    transform: scale(1.1) rotate(10deg);
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.3), rgba(46, 125, 50, 0.1));
+}
+
+.mv-glass-card h3 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.mv-glass-card p {
+    color: #cccccc;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* =========================================
+   📱 MOBILE RESPONSIVENESS (PERFECT FIX)
+   ========================================= */
+@media screen and (max-width: 992px) {
+    .mv-premium-grid {
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .mv-glass-card {
+        padding: 50px 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mv-premium {
+        padding: 80px 20px;
+    }
+
+    .mv-premium-grid {
+        grid-template-columns: 1fr;
+        /* Stack vertically on mobile */
+        gap: 40px;
+        padding: 0;
+    }
+
+    .mv-glass-card {
+        padding: 40px 25px;
+    }
+
+    .mv-glass-card h3 {
+        font-size: 1.8rem;
+    }
+
+    .mv-glass-card p {
+        font-size: 1rem;
+    }
+
+    /* Modify hover effect on mobile to prevent clipping */
+    .mv-glass-card:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* --- MEET THE TEAM V2 (CINEMATIC POSTERS) --- */
+.team-premium {
+    background-color: #0a140a;
+    /* Matches the dark theme */
+    padding: 120px 20px;
+    position: relative;
+}
+
+.team-grid-premium {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 60px auto 0 auto;
+}
+
+/* Character Poster Card Styling */
+.team-card-pro {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 450px;
+    /* Tall poster look */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.team-card-pro:hover {
+    transform: translateY(-15px);
+    /* Lift up effect */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 20px rgba(76, 175, 80, 0.2);
+}
+
+/* Image Wrapper & Animation */
+.team-img-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.team-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(80%) brightness(0.7);
+    /* Starts dark & grayscale */
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.team-card-pro:hover .team-img-wrapper img {
+    filter: grayscale(0%) brightness(1);
+    /* Full color & bright on hover */
+    transform: scale(1.08);
+    /* Zoom in */
+}
+
+/* Gradient to make text readable */
+.card-gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, rgba(10, 20, 10, 0.95) 0%, rgba(10, 20, 10, 0.6) 50%, transparent 100%);
+    z-index: 2;
+}
+
+/* Text Content */
+.team-info-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 25px;
+    z-index: 3;
+    text-align: center;
+}
+
+.team-info-box h3 {
+    color: #ffffff;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.team-card-pro:hover .team-info-box h3 {
+    color: #4CAF50;
+    /* Name turns green on hover */
+}
+
+.team-role {
+    color: #a5d6a7;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    transition: opacity 0.3s ease;
+}
+
+/* Glassmorphism Social Tray (Hidden by default) */
+.social-glass-tray {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 12px 20px;
+    border-radius: 30px;
+    display: inline-flex;
+    gap: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.social-glass-tray a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+}
+
+.social-glass-tray a:hover {
+    transform: scale(1.3);
+    color: #4CAF50;
+}
+
+/* Slide up and show tray on hover */
+.team-card-pro:hover .social-glass-tray {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   📱 MOBILE RESPONSIVENESS (NO HORIZONTAL SCROLL)
+   ========================================= */
+@media screen and (max-width: 992px) {
+    .team-grid-premium {
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .team-premium {
+        padding: 80px 20px;
+    }
+
+    .team-grid-premium {
+        grid-template-columns: 1fr;
+        /* Stack vertically */
+        max-width: 400px;
+        margin: 40px auto 0 auto;
+    }
+
+    .team-card-pro {
+        height: 400px;
+        /* Slightly shorter on mobile */
+    }
+
+    /* On mobile, images should be full color by default because hover doesn't exist */
+    .team-img-wrapper img {
+        filter: grayscale(0%) brightness(0.9);
+    }
+
+    /* Show social tray by default on mobile */
+    .social-glass-tray {
+        opacity: 1;
+        transform: translateY(0);
+        background: rgba(20, 40, 20, 0.8);
+        /* Darker background for visibility */
+        border-color: rgba(76, 175, 80, 0.3);
+    }
+}
+
+/* --- MEET THE TEAM V2 (CINEMATIC POSTERS) --- */
+.team-premium {
+    background-color: #0a140a;
+    /* Matches the dark theme */
+    padding: 120px 20px;
+    position: relative;
+}
+
+.team-grid-premium {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 60px auto 0 auto;
+}
+
+/* Character Poster Card Styling */
+.team-card-pro {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 450px;
+    /* Tall poster look */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.team-card-pro:hover {
+    transform: translateY(-15px);
+    /* Lift up effect */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 20px rgba(76, 175, 80, 0.2);
+}
+
+/* Image Wrapper & Animation */
+.team-img-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.team-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(80%) brightness(0.7);
+    /* Starts dark & grayscale */
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.team-card-pro:hover .team-img-wrapper img {
+    filter: grayscale(0%) brightness(1);
+    /* Full color & bright on hover */
+    transform: scale(1.08);
+    /* Zoom in */
+}
+
+/* Gradient to make text readable */
+.card-gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, rgba(10, 20, 10, 0.95) 0%, rgba(10, 20, 10, 0.6) 50%, transparent 100%);
+    z-index: 2;
+}
+
+/* Text Content */
+.team-info-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 25px;
+    z-index: 3;
+    text-align: center;
+}
+
+.team-info-box h3 {
+    color: #ffffff;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.team-card-pro:hover .team-info-box h3 {
+    color: #4CAF50;
+    /* Name turns green on hover */
+}
+
+.team-role {
+    color: #a5d6a7;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    transition: opacity 0.3s ease;
+}
+
+/* Glassmorphism Social Tray (Hidden by default) */
+.social-glass-tray {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 12px 20px;
+    border-radius: 30px;
+    display: inline-flex;
+    gap: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.social-glass-tray a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+}
+
+.social-glass-tray a:hover {
+    transform: scale(1.3);
+    color: #4CAF50;
+}
+
+/* Slide up and show tray on hover */
+.team-card-pro:hover .social-glass-tray {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   📱 MOBILE RESPONSIVENESS (NO HORIZONTAL SCROLL)
+   ========================================= */
+@media screen and (max-width: 992px) {
+    .team-grid-premium {
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .team-premium {
+        padding: 80px 20px;
+    }
+
+    .team-grid-premium {
+        grid-template-columns: 1fr;
+        /* Stack vertically */
+        max-width: 400px;
+        margin: 40px auto 0 auto;
+    }
+
+    .team-card-pro {
+        height: 400px;
+        /* Slightly shorter on mobile */
+    }
+
+    /* On mobile, images should be full color by default because hover doesn't exist */
+    .team-img-wrapper img {
+        filter: grayscale(0%) brightness(0.9);
+    }
+
+    /* Show social tray by default on mobile */
+    .social-glass-tray {
+        opacity: 1;
+        transform: translateY(0);
+        background: rgba(20, 40, 20, 0.8);
+        /* Darker background for visibility */
+        border-color: rgba(76, 175, 80, 0.3);
+    }
+}
+
+/* --- OUR PARTNERS V2 (INFINITE TICKER & GLOW) --- */
+.partners-premium {
+    background-color: #070d07;
+    /* Ultra dark green theme */
+    padding: 100px 20px;
+    overflow: hidden;
+    /* Strict constraint to prevent screen width breaking */
+    width: 100%;
+}
+
+/* Premium Border Fade Blur for Marquee */
+.marquee-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 0;
+    /* Softly fades the left and right edges */
+    mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 40px;
+    width: max-content;
+    animation: scrollMarquee 25s linear infinite;
+}
+
+/* Pause scroll when cursor covers the track */
+.marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* Loop Animation Matrix */
+@keyframes scrollMarquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+    /* Moves exactly half way for a seamless loop jump */
+}
+
+/* Modern Glassmorphism Badges */
+.partner-badge {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: #999;
+    /* Starts muted */
+    padding: 20px 40px;
+    border-radius: 50px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    white-space: nowrap;
+    /* Prevents text from pushing to next line inside badge */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+}
+
+.partner-badge span {
+    font-size: 1.5rem;
+    transition: transform 0.4s ease;
+}
+
+/* Cyber Eco Hover Highlight */
+.partner-badge:hover {
+    color: #ffffff;
+    background: rgba(76, 175, 80, 0.1);
+    border-color: #4CAF50;
+    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.2);
+    transform: translateY(-5px);
+}
+
+.partner-badge:hover span {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* =========================================
+   📱 MOBILE RESPONSIVENESS (AUTO LOCK)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    .partners-premium {
+        padding: 60px 20px;
+    }
+
+    .partner-badge {
+        padding: 15px 30px;
+        font-size: 0.95rem;
+        gap: 10px;
+    }
+
+    .partner-badge span {
+        font-size: 1.2rem;
+    }
+
+    /* Speed up loop timing on mobile for a snappier feel */
+    .marquee-track {
+        animation: scrollMarquee 18s linear infinite;
+        gap: 25px;
+    }
+}
+
+/* --- CALL TO ACTION V2 (IMMERSIVE GLOW) --- */
+.cta-premium-section {
+    position: relative;
+    padding: 140px 20px;
+    /* High quality dark forest depth background image */
+    background: url('./asset/ab1.webp') center/cover no-repeat fixed;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Rich Dark Eco Gradient Overlay */
+.cta-glow-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(7, 13, 7, 0.95) 30%, rgba(46, 125, 50, 0.4) 100%);
+    z-index: 1;
+}
+
+.cta-pro-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Floating Eco Badge */
+.cta-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #81C784;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+/* Main Premium Headings */
+.cta-title {
+    font-size: 3.5rem;
+    color: #ffffff;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Soft highlight text color */
+.cta-title span {
+    color: #4CAF50;
+    background: linear-gradient(90deg, #4CAF50, #81C784);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cta-desc {
+    color: #dddddd;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    max-width: 650px;
+    margin: 0 auto 40px auto;
+}
+
+/* --- THE NEON GLOW BUTTON --- */
+.cta-glow-btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 40px;
+    border-radius: 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.cta-glow-btn:hover {
+    background-color: #ffffff;
+    color: #070d07;
+    transform: translateY(-5px);
+    /* Lift up animation */
+    box-shadow: 0 15px 30px rgba(76, 175, 80, 0.5), 0 0 20px rgba(76, 175, 80, 0.3);
+    /* Vibrant Neon Aura Glow */
+}
+
+/* =========================================
+   📱 MOBILE RESPONSIVENESS (100% STABLE)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    .cta-premium-section {
+        padding: 100px 20px;
+        background-attachment: scroll;
+        /* Disables fixed background scroll to avoid iOS layout crunching bugs */
+    }
+
+    .cta-title {
+        font-size: 2.4rem;
+        /* Auto text scaling */
+    }
+
+    .cta-desc {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .cta-glow-btn {
+        padding: 14px 30px;
+        font-size: 1rem;
+        width: 100%;
+        /* Spans full responsive layout width on mobile views */
+        text-align: center;
+    }
+
+    .cta-badge {
+        font-size: 0.8rem;
+        padding: 6px 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cta-title {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        
+        :root {
+            --primary-color: #4CAF50;
+            --primary-light: rgba(76, 175, 80, 0.15);
+            --primary-dark: #2E7D32;
+            --text-dark: #ffffff;
+            --text-muted: #aaaaaa;
+            --bg-color: #050a05;
+            --sidebar-bg: #070d07;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --card-bg: rgba(255, 255, 255, 0.02);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        
+        html,
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+       
+        .dashboard-container {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+        }
+
+        .sidebar {
+            width: 260px;
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1050;
+            position: fixed;
+            height: 100vh;
+        }
+
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 10, 5, 0.8);
+            z-index: 1040;
+            backdrop-filter: blur(3px);
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+        }
+
+        .sidebar-header {
+            padding: 25px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-img {
+            width: 150px;
+            height: auto;
+            padding-top: 10px;
+            padding-left: 30px;
+        }
+
+        .close-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 20px 0;
+        }
+
+        .menu-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 14px 25px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            cursor: pointer;
+        }
+
+        .menu-link i {
+            font-size: 18px;
+            width: 25px;
+            text-align: center;
+        }
+
+        .menu-link:hover,
+        .menu-link.active {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .sidebar-bottom {
+            padding: 15px 0 25px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .logout-btn {
+            color: #ef4444;
+        }
+
+        .logout-btn:hover {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            border-left: 4px solid #ef4444;
+        }
+
+       
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-left: 260px;
+            min-height: 100vh;
+            width: calc(100% - 260px);
+            transition: 0.3s;
+        }
+
+        .top-header {
+            background-color: rgba(7, 13, 7, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 998;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: var(--primary-light);
+            color: var(--primary-color);
+            border: none;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .greeting h1 {
+            font-size: 22px;
+            color: var(--text-dark);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .welcome-name {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: normal;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-align: right;
+        }
+
+        .user-role {
+            font-size: 12px;
+            color: var(--primary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .user-email {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 600;
+            display: block;
+        }
+
+        .user-avatar i {
+            font-size: 40px;
+            color: var(--primary-color);
+        }
+
+       
+        .view-section {
+            display: none;
+            padding: 30px;
+            animation: fadeIn 0.4s ease-in-out;
+            flex-direction: column;
+            gap: 30px;
+            width: 100%;
+            max-width: 100vw;
+        }
+
+        .view-section.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .scroll-anim {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .scroll-anim.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+       
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .stat-details {
+            overflow: hidden;
+        }
+
+        .stat-details h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .stat-details p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+    
+        .content-box {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 350px;
+            width: 100%;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            min-width: 600px;
+           
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14px;
+        }
+
+        th {
+            color: var(--primary-color);
+            font-weight: 600;
+            white-space: nowrap;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .status {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .status.completed {
+            background: rgba(76, 175, 80, 0.1);
+            color: #4caf50;
+            border: 1px solid #4caf50;
+        }
+
+        .status.pending {
+            background: rgba(255, 152, 0, 0.1);
+            color: #ff9800;
+            border: 1px solid #ff9800;
+        }
+
+        .status.cancelled {
+            background: rgba(244, 67, 54, 0.1);
+            color: #f44336;
+            border: 1px solid #f44336;
+        }
+
+      
+        .input-group {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        .input-group input,
+        .input-group select,
+        .input-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            outline: none;
+            font-size: 14px;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus,
+        .input-group textarea:focus {
+            border-color: var(--primary-color);
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        select option {
+            background: #050a05;
+            color: white;
+        }
+
+        .main-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 14px 20px;
+            width: 100%;
+            font-size: 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .main-btn:hover {
+            background: #ffffff;
+            color: var(--bg-color);
+        }
+
+       
+        .simple-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .simple-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .simple-list li:last-child {
+            border-bottom: none;
+        }
+
+        .timeline {
+            margin-top: 15px;
+            border-left: 2px solid var(--primary-light);
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .timeline-item {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 2px solid var(--bg-color);
+        }
+
+        .timeline-item h4 {
+            font-size: 14px;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .timeline-item p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 992px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+                box-shadow: 5px 0 25px rgba(0, 0, 0, 0.8);
+            }
+
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+                max-width: 100vw;
+            }
+
+            .menu-toggle,
+            .close-btn {
+                display: block;
+            }
+
+            .two-col-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-header {
+                padding: 15px 20px;
+            }
+
+            .greeting h1 {
+                font-size: 1.2rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .welcome-name {
+                display: none;
+            }
+
+       
+
+            .user-info {
+                display: none;
+            }
+
+            
+            .user-avatar i {
+                font-size: 35px;
+            }
+
+            .view-section {
+                padding: 20px 15px;
+                gap: 20px;
+            }
+
+            .content-box {
+                padding: 20px 15px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .stat-card {
+                padding: 20px;
+            }
+
+            .stat-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .chart-container {
+                height: 250px;
+            }
+
+
+            .simple-list li {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .simple-list .status {
+                align-self: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .top-header {
+                padding: 12px 15px;
+            }
+
+            .logo-text {
+                font-size: 1.5rem;
+            }
+
+            .sidebar {
+                width: 240px;
+            }
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .form-error {
+            color: #ff4d4d;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            display: none;
+            font-weight: 500;
+        }
+
+        .form-error.show {
+            display: block;
+        }
+
+        .input-error {
+            border-color: #ff4d4d !important;
+        }
+
+        .input-success {
+            border-color: #4CAF50 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-top">
+                <div class="sidebar-header">
+                    <div class="logo">
+                        <img src="./asset/white logo (1).webp" alt="Company Logo" class="logo-img">
+                    </div>
+                    <button class="close-btn" id="closeSidebar"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+
+                <ul class="sidebar-menu">
+                    <li><a class="menu-link active" data-target="dashboard-view"><i class="fa-solid fa-compass"></i>
+                            Basecamp</a></li>
+                    <li><a class="menu-link" data-target="booking-view"><i class="fa-solid fa-ticket"></i> Trail
+                            Passes</a></li>
+                    <li><a class="menu-link" data-target="schedule-view"><i class="fa-solid fa-calendar-check"></i>
+                            Expeditions</a></li>
+                    <li><a class="menu-link" data-target="explorer-view"><i class="fa-solid fa-users"></i> Explorers</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-bottom">
+                <a href="login.html" class="menu-link logout-btn" id="logoutBtn">
+                    <i class="fa-solid fa-power-off"></i> Sign Out
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="menu-toggle" id="openSidebar"><i class="fa-solid fa-bars"></i></button>
+                    <div class="greeting">
+                        <h1 id="page-title">Basecamp Overview <span class="welcome-name"></span></h1>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <div class="user-info">
+                            <span class="user-role">Expedition Leader</span>
+                            <span class="user-email" id="displayEmail">admin@ecovoyage.com</span>
+                        </div>
+                        <div class="user-avatar"><i class="fa-solid fa-circle-user"></i></div>
+                    </div>
+                </div>
+            </header>
+
+            <div id="dashboard-view" class="view-section active">
+                <section class="stats-grid scroll-anim">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(76, 175, 80, 0.1); color: #4CAF50;">
+                            <i class="fa-solid fa-money-bill-trend-up"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>$12,450</h3>
+                            <p>Pass Sales</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(33, 150, 243, 0.1); color: #2196f3;">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>8</h3>
+                            <p>Active Trails</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(255, 152, 0, 0.1); color: #ff9800;">
+                            <i class="fa-solid fa-campground"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>142</h3>
+                            <p>Explorers Inside</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-box scroll-anim">
+                    <h2 class="section-title">Monthly Pass Revenue</h2>
+                    <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </section>
+            </div>
+
+            <div id="booking-view" class="view-section">
+                <section class="stats-grid scroll-anim">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(76, 175, 80, 0.1); color: #4CAF50;">
+                            <i class="fa-solid fa-ticket"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>350</h3>
+                            <p>Passes (This Month)</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(244, 67, 54, 0.1); color: #f44336;">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>5</h3>
+                            <p>Cancellations</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="two-col-grid">
+                    <section class="content-box scroll-anim">
+                        <h2 class="section-title">Manual Booking</h2>
+                        <form id="bookingForm" novalidate>
+                            <div class="input-group">
+                                <input type="text" id="explorerName" placeholder="Explorer Full Name" required>
+                                <span class="form-error" id="nameError"></span>
+                            </div>
+
+                            <div class="input-group">
+                                <select id="expeditionLevel" required>
+                                    <option value="" selected disabled>Select Expedition Level</option>
+                                    <option value="level_1">Level 1: Day Trail</option>
+                                    <option value="level_2">Level 2: Eco-Camp (Overnight)</option>
+                                    <option value="level_3">Level 3: Survivalist Trek</option>
+                                    <option value="corporate">Corporate Group Pass</option>
+                                </select>
+                                <span class="form-error" id="levelError"></span>
+                            </div>
+
+                            <div class="input-group">
+                                <input type="date" id="expeditionDate" required>
+                                <span class="form-error" id="dateError"></span>
+                            </div>
+
+                            <button type="submit" class="main-btn" id="bookingBtn">
+                                <i class="fa-solid fa-plus"></i> <span class="btn-text">Generate Pass</span>
+                            </button>
+                        </form>
+                    </section>
+
+                    <section class="content-box scroll-anim">
+                        <h2 class="section-title">Priority Alerts</h2>
+                        <ul class="simple-list">
+                            <li>
+                                <div>
+                                    <i class="fa-solid fa-cloud-bolt" style="color: #ff9800; margin-right: 8px;"></i>
+                                    <strong style="color: white;">Weather Warning: Zone B</strong><br>
+                                    <span style="font-size:12px; color:var(--text-muted); padding-left: 24px;">Heavy
+                                        rain expected. Reroute Eco-Camp.</span>
+                                </div>
+                                <span class="status pending">Action Req</span>
+                            </li>
+                            <li>
+                                <div>
+                                    <i class="fa-solid fa-leaf" style="color: #4caf50; margin-right: 8px;"></i>
+                                    <strong style="color: white;">Forest Dept Clearance</strong><br>
+                                    <span style="font-size:12px; color:var(--text-muted); padding-left: 24px;">Level 3
+                                        permits approved for weekend.</span>
+                                </div>
+                                <span class="status completed">Cleared</span>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+
+            <div id="schedule-view" class="view-section">
+                <section class="stats-grid scroll-anim">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(33, 150, 243, 0.1); color: #2196f3;">
+                            <i class="fa-solid fa-shoe-prints"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>12</h3>
+                            <p>Guides on Field Today</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="two-col-grid">
+                    <section class="content-box scroll-anim">
+                        <h2 class="section-title">Live Trail Dispatches</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h4><i class="fa-solid fa-sun" style="color: #ff9800; margin-right:5px;"></i> Morning
+                                    Canopy Walk</h4>
+                                <p>06:00 AM - 10:00 AM | Guide: Ramesh Tribe</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4><i class="fa-solid fa-tent"
+                                        style="color: var(--primary-color); margin-right:5px;"></i> Overnight Survival
+                                    Prep</h4>
+                                <p style="color: var(--primary-color);">Departing: 3:00 PM | Basecamp Alpha</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="content-box scroll-anim">
+                        <h2 class="section-title">Upcoming Expeditions</h2>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Exp ID</th>
+                                        <th>Date</th>
+                                        <th>Level</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#EXP-902</td>
+                                        <td>Oct 24</td>
+                                        <td>Level 2</td>
+                                        <td><span class="status pending">Preparing</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#EXP-901</td>
+                                        <td>Oct 23</td>
+                                        <td>Level 1</td>
+                                        <td><span class="status completed">On Trail</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div id="explorer-view" class="view-section">
+                <section class="content-box scroll-anim">
+                    <h2 class="section-title">Explorer Database</h2>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Explorer ID</th>
+                                    <th>Name</th>
+                                    <th>Contact</th>
+                                    <th>Pass Type</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>#EX-2041</strong></td>
+                                    <td>Karthik S.</td>
+                                    <td>karthik@email.com</td>
+                                    <td><span
+                                            style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; font-size: 11px;">Survivalist</span>
+                                    </td>
+                                    <td><span class="status completed">Verified</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#EX-2042</strong></td>
+                                    <td>TechCorp Team</td>
+                                    <td>hr@techcorp.in</td>
+                                    <td><span
+                                            style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; font-size: 11px;">Corporate</span>
+                                    </td>
+                                    <td><span class="status completed">Verified</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+       
+        const emailValue = localStorage.getItem("UserMail");
+        const email = emailValue || "admin@ecovoyage.com";
+        const extractedName = email.split("@")[0];
+        const formattedName = extractedName.charAt(0).toUpperCase() + extractedName.slice(1);
+
+        document.getElementById("displayEmail").textContent = email;
+        const welcomeEl = document.querySelector(".welcome-name");
+        if (welcomeEl) { welcomeEl.textContent = `| Hi, Leader ${formattedName} 🌲`; }
+
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+        const openSidebarBtn = document.getElementById('openSidebar');
+        const closeSidebarBtn = document.getElementById('closeSidebar');
+
+        function openSidebar() { sidebar.classList.add('active'); overlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeSidebar() { sidebar.classList.remove('active'); overlay.classList.remove('active'); document.body.style.overflow = ''; }
+
+        openSidebarBtn.addEventListener('click', openSidebar);
+        closeSidebarBtn.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+
+        const menuLinks = document.querySelectorAll('.sidebar-menu .menu-link');
+        const views = document.querySelectorAll('.view-section');
+        const pageTitle = document.getElementById('page-title');
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                menuLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                views.forEach(v => v.classList.remove('active'));
+
+                const targetId = this.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+
+                pageTitle.innerHTML = `${this.innerText} <span class="welcome-name">| Hi, Leader ${formattedName} 🌲</span>`;
+
+                if (window.innerWidth <= 992) { closeSidebar(); }
+                triggerAnimations();
+            });
+        });
+
+      
+        document.getElementById('logoutBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.removeItem("UserMail");
+            window.location.href = "login.html";
+        });
+
+        const bookingForm = document.getElementById("bookingForm");
+        const bookingBtn = document.getElementById("bookingBtn");
+        const btnText = bookingBtn.querySelector(".btn-text");
+
+        const dateInput = document.getElementById("expeditionDate");
+        const todayDate = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', todayDate);
+
+        bookingForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let isValid = true;
+
+            const nameInput = document.getElementById("explorerName");
+            const levelInput = document.getElementById("expeditionLevel");
+
+            const nameError = document.getElementById("nameError");
+            const levelError = document.getElementById("levelError");
+            const dateError = document.getElementById("dateError");
+
+            [nameInput, levelInput, dateInput].forEach(input => input.classList.remove("input-error", "input-success"));
+            [nameError, levelError, dateError].forEach(error => { error.innerText = ""; error.classList.remove("show"); });
+
+            if (nameInput.value.trim().length < 3) {
+                nameError.innerText = "Explorer name must be at least 3 characters.";
+                nameError.classList.add("show");
+                nameInput.classList.add("input-error");
+                isValid = false;
+            } else {
+                nameInput.classList.add("input-success");
+            }
+
+            if (levelInput.value === "") {
+                levelError.innerText = "Please select an expedition level.";
+                levelError.classList.add("show");
+                levelInput.classList.add("input-error");
+                isValid = false;
+            } else {
+                levelInput.classList.add("input-success");
+            }
+
+            const selectedDate = new Date(dateInput.value);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            if (!dateInput.value) {
+                dateError.innerText = "Please select an expedition date.";
+                dateError.classList.add("show");
+                dateInput.classList.add("input-error");
+                isValid = false;
+            } else if (selectedDate < today) {
+                dateError.innerText = "You cannot book a pass for a past date.";
+                dateError.classList.add("show");
+                dateInput.classList.add("input-error");
+                isValid = false;
+            } else {
+                dateInput.classList.add("input-success");
+            }
+
+            if (isValid) {
+                bookingBtn.disabled = true;
+                btnText.innerText = "Generating Pass...";
+                bookingBtn.style.background = "#888";
+
+                setTimeout(() => {
+                    btnText.innerText = "Pass Generated!";
+                    bookingBtn.style.background = "#4CAF50";
+
+                    setTimeout(() => {
+                        btnText.innerText = "Generate Pass";
+                        bookingBtn.style.background = ""; 
+                        bookingBtn.disabled = false;
+                        window.location.href = '404.html'
+                        bookingForm.reset();
+                      
+                        [nameInput, levelInput, dateInput].forEach(input => input.classList.remove("input-success"));
+                    }, 100);
+
+                }, 100); 
+            }
+        });
+        
+        const ctx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Pass Revenue ($)',
+                    data: [12000, 19000, 15000, 22000, 28000, 35000],
+                    borderColor: '#4CAF50',
+                    backgroundColor: 'rgba(76, 175, 80, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                color: '#aaa',
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#888' } },
+                    x: { grid: { display: false }, ticks: { color: '#888' } }
+                }
+            }
+        });
+
+       
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('show'); } });
+        }, { threshold: 0.1 });
+
+        function triggerAnimations() {
+            document.querySelectorAll('.scroll-anim').forEach(el => {
+                el.classList.remove('show');
+                observer.observe(el);
+            });
+        }
+        triggerAnimations();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,453 @@
+/* --- MINIMALIST HIGH-END HERO --- */
+.contact-hero-minimal {
+    padding: 180px 20px 100px 20px;
+    background: #050a05;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container-min {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero-text-block {
+    max-width: 500px;
+}
+
+.hero-kicker {
+    color: #4CAF50;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.hero-title-min {
+    font-size: 4.5rem;
+    color: #ffffff;
+    line-height: 1;
+    margin: 20px 0;
+    font-weight: 800;
+}
+
+.hero-title-min span {
+    color: #ffffff;
+    opacity: 0.6;
+    /* Light gray to give typography contrast */
+}
+
+.hero-sub-min {
+    color: #888;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Floating Card Style */
+.hero-visual-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 350px;
+}
+
+.visual-card-inner h3 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.tel-link {
+    font-size: 1.8rem;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Mobile Layout */
+@media screen and (max-width: 768px) {
+    .contact-hero-minimal {
+        padding: 100px 20px;
+    }
+
+    .hero-container-min {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text-block {
+        margin-bottom: 40px;
+    }
+
+    .hero-title-min {
+        font-size: 3rem;
+    }
+
+    .hero-visual-card {
+        width: 100%;
+    }
+}
+
+/* --- PREMIUM GLASS CONNECT CARDS --- */
+.connect-glass-section {
+    padding: 100px 20px;
+    background: #050a05;
+}
+
+.connect-grid-pro {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.glass-card-pro {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+/* Hover Glow Aura */
+.glass-card-pro::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(76, 175, 80, 0.15) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.glass-card-pro:hover::before {
+    opacity: 1;
+}
+
+.glass-card-pro:hover {
+    transform: translateY(-10px);
+    border-color: rgba(76, 175, 80, 0.4);
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.icon-pro {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.glass-card-pro h3 {
+    color: #fff;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.glass-card-pro p {
+    color: #aaa;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.sub-txt {
+    color: #4CAF50;
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+/* Mobile Responsive Lock */
+@media screen and (max-width: 768px) {
+    .connect-grid-pro {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .glass-card-pro {
+        padding: 30px 20px;
+    }
+}
+
+/* --- DISPATCH FORM PRO --- */
+.dispatch-section-pro {
+    padding: 100px 20px;
+    background: #050a05;
+}
+
+.dispatch-split-pro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.title-pro {
+    font-size: 3.5rem;
+    color: #fff;
+    margin: 20px 0;
+    font-weight: 800;
+}
+
+.title-pro span {
+    color: #888;
+}
+
+.dispatch-form-card {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Floating Label Animation */
+.input-field {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.input-field input,
+.input-field textarea {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid #444;
+    background: transparent;
+    color: white;
+    outline: none;
+    font-size: 1rem;
+}
+
+.input-field label {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: #777;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.input-field input:focus~label,
+.input-field input:not(:placeholder-shown)~label,
+.input-field textarea:focus~label,
+.input-field textarea:not(:placeholder-shown)~label {
+    top: -15px;
+    font-size: 0.7rem;
+    color: #4CAF50;
+}
+
+/* Validation Feedback */
+.pro-form input:invalid:not(:placeholder-shown),
+.pro-form textarea:invalid:not(:placeholder-shown) {
+    border-bottom: 1px solid #ff4d4d;
+}
+
+.pro-form input:valid:not(:placeholder-shown),
+.pro-form textarea:valid:not(:placeholder-shown) {
+    border-bottom: 1px solid #4CAF50;
+}
+
+.error-msg {
+    color: #ff4d4d;
+    font-size: 0.7rem;
+    display: none;
+    margin-top: 5px;
+}
+
+.pro-form input:invalid:not(:placeholder-shown)~.error-msg {
+    display: block;
+}
+
+/* Button */
+.send-btn {
+    background: #fff;
+    color: #050a05;
+    padding: 15px 30px;
+    border-radius: 40px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.send-btn:hover {
+    background: #4CAF50;
+    color: white;
+}
+
+/* Mobile Lock */
+@media screen and (max-width: 768px) {
+    .dispatch-split-pro {
+        grid-template-columns: 1fr;
+    }
+
+    .title-pro {
+        font-size: 2.5rem;
+    }
+}
+
+/* --- CINEMATIC DARK MAP --- */
+.map-premium-section {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+}
+
+.map-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* The Magic Hack: Map Filter */
+.map-container iframe {
+    /* invert(90%) -> White to Black
+       hue-rotate(120deg) -> Turns blue ocean to dark green
+       brightness(85%) -> Dims it
+       contrast(90%) -> Refines the edges
+    */
+    height: 450px;
+    filter: invert(90%) hue-rotate(120deg) brightness(85%) contrast(90%);
+}
+
+/* Glass Overlay */
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 30%, rgba(7, 13, 7, 0.4) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    /* Allows interacting with the map */
+}
+
+/* Operational Badge */
+.map-glass-badge {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    padding: 12px 24px;
+    border-radius: 40px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: #4CAF50;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+    }
+
+    70% {
+        transform: scale(1.2);
+        box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+    }
+}
+
+/* --- SOCIAL TRIBE NEON CARDS --- */
+.social-tribe-section {
+    background: #050a05;
+    padding: 100px 20px;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.social-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+/* Neon Glow Effect on Hover */
+.instagram:hover {
+    border-color: #E1306C;
+    box-shadow: 0 0 20px rgba(225, 48, 108, 0.3);
+    transform: translateY(-5px);
+}
+
+.twitter:hover {
+    border-color: #1DA1F2;
+    box-shadow: 0 0 20px rgba(29, 161, 242, 0.3);
+    transform: translateY(-5px);
+}
+
+.youtube:hover {
+    border-color: #FF0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+.social-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.social-card span {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Mobile Lock */
+@media screen and (max-width: 600px) {
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+}

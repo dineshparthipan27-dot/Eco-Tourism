@@ -1,0 +1,309 @@
+/* --- PREMIUM ECO-DARK LOGIN THEME --- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    /* Dark Forest Background with Overlay */
+    background: linear-gradient(135deg, rgba(28, 62, 28, 0.8), rgba(2, 43, 2, 0.95)),
+        url('https://images.unsplash.com/photo-1518182170546-0766de6b6aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Back Button */
+.back-home {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    text-decoration: none;
+    color: #aaaaaa;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.back-home:hover {
+    color: #4CAF50;
+    transform: translateX(-5px);
+}
+
+.auth-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Glassmorphism Card */
+.auth-glass-card {
+    width: 450px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 27px;
+}
+
+.logo img {
+    width: 180px;
+}
+
+/* Tabs */
+.tab-buttons {
+    display: flex;
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.tab-buttons button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #aaaaaa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.tab-buttons button.active {
+    background: #4CAF50;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+/* Typography */
+h2 {
+    text-align: center;
+    color: #ffffff;
+}
+
+.subtitle {
+    text-align: center;
+    color: #888888;
+    margin: 5px 0 25px;
+    font-size: 0.95rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Inputs */
+input,
+select {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-size: 14px;
+    color: #ffffff;
+    outline: none;
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: #666;
+}
+
+input:focus,
+select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+select option {
+    background: #050a05;
+    color: white;
+}
+
+/* Password Box */
+.password-box {
+    position: relative;
+    width: 100%;
+}
+
+.password-box i {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    cursor: pointer;
+    color: #888;
+    transition: 0.3s;
+}
+
+.password-box i:hover {
+    color: #4CAF50;
+}
+
+/* Errors */
+.error-msg {
+    color: #ff4d4d;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: none;
+    font-weight: 500;
+}
+
+.error-msg.show {
+    display: block;
+}
+
+/* Options */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #aaaaaa;
+    cursor: pointer;
+}
+
+.remember-me input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #4CAF50;
+}
+
+.options a {
+    text-decoration: none;
+    color: #81C784;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.options a:hover {
+    color: #4CAF50;
+}
+
+/* Main Button */
+.main-btn {
+    padding: 15px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+}
+
+.main-btn:hover {
+    background: #ffffff;
+    color: #050a05;
+    transform: translateY(-2px);
+}
+
+/* Social Icons */
+.divider {
+    text-align: center;
+    color: #666;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin: 10px 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #aaa;
+    text-decoration: none;
+    transition: 0.3s;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.social-icons a:hover {
+    background: #4CAF50;
+    color: white;
+    border-color: #4CAF50;
+    transform: translateY(-3px);
+}
+
+/* Bottom Text */
+.bottom-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 5px;
+}
+
+.bottom-text span {
+    color: #4CAF50;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bottom-text span:hover {
+    color: #81C784;
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Mobile */
+@media(max-width: 500px) {
+    .auth-glass-card {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .back-home {
+        top: 20px;
+        left: 20px;
+        font-size: 14px;
+    }
+}

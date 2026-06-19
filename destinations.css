@@ -1,0 +1,1581 @@
+/* --- LUXURY EDITORIAL DESTINATIONS HERO (V3) --- */
+.dest-hero-v3 {
+    position: relative;
+    min-height: 85vh;
+    /* Gives massive breathing space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    padding: 120px 20px 60px 20px;
+}
+
+/* Moving Breathing Nature Canvas Background */
+.hero-canvas-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(7, 13, 7, 0.65), rgba(7, 11, 7, 0.98)),
+        url('asset/de1.webp') center/cover no-repeat;
+    z-index: -2;
+    animation: slowCanvasBreathing 30s infinite alternate ease-in-out;
+}
+
+/* Ambient Radial Glow */
+.hero-radial-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(76, 175, 80, 0.12) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes slowCanvasBreathing {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+
+    100% {
+        transform: scale(1.1) translateY(-10px);
+    }
+}
+
+.hero-container-v3 {
+    max-width: 950px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 2;
+}
+
+/* Typography Styles */
+.hero-tagline {
+    color: #81C784;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.hero-title-v3 {
+    font-size: 4.8rem;
+    color: #ffffff;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+.gradient-text-v3 {
+    background: linear-gradient(90deg, #4CAF50 0%, #a5d6a7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-desc-v3 {
+    color: #cccccc;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    max-width: 680px;
+    margin: 0 auto 50px auto;
+}
+
+/* --- THE MODERN MULTI-SEGMENT SEARCH ENGINE --- */
+.eco-search-engine {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 100px;
+    /* Seamless continuous capsule shape */
+    display: flex;
+    padding: 10px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    align-items: center;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+/* Individual Segment Panels */
+.search-segment {
+    flex: 1;
+    padding: 10px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.search-segment:nth-child(3) {
+    border-right: none;
+    /* Removes separator before the button */
+}
+
+.search-segment label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #81C784;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.search-segment input,
+.search-segment select {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.search-segment select {
+    cursor: pointer;
+}
+
+.search-segment select option {
+    background: #070d07;
+    color: white;
+}
+
+/* Ultimate High-Action Button */
+.engine-search-btn {
+    background: #4CAF50;
+    color: white !important;
+    border: none;
+    padding: 18px 35px;
+    border-radius: 100px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 20px rgba(76, 175, 80, 0.4);
+}
+.engine-search-btn span{
+    color: white;
+}
+.engine-search-btn:hover span{
+    color: green;
+}
+.engine-search-btn:hover {
+    background: #ffffff;
+    color: #070d07;
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+.engine-search-btn:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
+.btn-arrow {
+    transition: transform 0.3s ease;
+}
+
+/* Quick Tags Styling */
+.quick-eco-tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.quick-eco-tags span {
+    color: #777;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.quick-eco-tags a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.quick-eco-tags a:hover {
+    color: white;
+    background: rgba(76, 175, 80, 0.15);
+    border-color: #4CAF50;
+    transform: translateY(-2px);
+}
+
+/* ===================================================
+   📱 THE NATIVE APP-STYLE MOBILE RESPONSIVE ENGINE
+   =================================================== */
+@media screen and (max-width: 850px) {
+    .dest-hero-v3 {
+        min-height: 90vh;
+        padding-top: 120px;
+    }
+
+    .hero-title-v3 {
+        font-size: 2.8rem;
+    }
+
+    .hero-desc-v3 {
+        font-size: 1rem;
+        margin-bottom: 35px;
+    }
+
+    /* Transform Capsule into a sleek Native App Card Layout */
+    .eco-search-engine {
+        flex-direction: column;
+        border-radius: 24px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.04);
+        gap: 15px;
+    }
+
+    .search-segment {
+        width: 100%;
+        padding: 0 0 15px 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        /* Separator lines on mobile */
+    }
+
+    .search-segment:nth-child(3) {
+        border-bottom: none;
+        /* No line before the button */
+    }
+
+    .engine-search-btn {
+        width: 100%;
+        justify-content: center;
+        height: 54px;
+        border-radius: 14px;
+        /* Matches mobile UI card standards */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-title-v3 {
+        font-size: 2.3rem;
+    }
+
+    .quick-eco-tags {
+        gap: 10px;
+    }
+
+    .quick-eco-tags a {
+        font-size: 0.8rem;
+        padding: 5px 12px;
+    }
+}
+
+/* --- FEATURED HOTSPOTS PRO STYLES --- */
+.hotspots-premium-section {
+    background-color: #0a140a;
+    /* Deep forest dark canvas */
+    padding: 120px 20px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hotspots-grid-pro {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 60px auto 0 auto;
+}
+
+/* Premium Poster Card Structuring */
+.hotspot-card-pro {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    height: 480px;
+    /* Tall proportional layout */
+    background: #070d07;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
+}
+
+.card-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Premium Category Glass Floating Badge */
+.hotspot-badge-pro {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(7, 13, 7, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #81C784;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 3;
+    text-transform: uppercase;
+}
+
+/* Cinematic Dark Gradient Text Protection Layer */
+.card-content-pro {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(7, 13, 7, 0.98) 0%, rgba(7, 13, 7, 0.8) 50%, rgba(7, 13, 7, 0.4) 80%, transparent 100%);
+    color: white;
+    padding: 35px 30px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Smooth transform animation logic */
+    transform: translateY(145px);
+    transition: transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card-primary-info h3 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.hotspot-loc {
+    color: #81C784;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Hidden elements expanded smoothly on desktop focus rules */
+.card-expanded-info {
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.card-expanded-info p {
+    color: #cccccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.hotspot-meta-pro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #a5d6a7;
+    margin-bottom: 25px;
+}
+
+.price-tag {
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+
+.price-tag::before {
+    content: 'from ';
+    font-size: 0.8rem;
+    color: #888;
+    font-weight: 400;
+}
+
+/* Internal Card Action Button */
+.hotspot-action-btn {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    display: block;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.hotspot-action-btn:hover {
+    background-color: white;
+    color: #070d07;
+}
+
+/* --- HOVER ACTIVATION MECHANICS --- */
+.hotspot-card-pro:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 20px rgba(76, 175, 80, 0.15);
+}
+
+.hotspot-card-pro:hover .card-image-wrapper img {
+    transform: scale(1.1);
+    /* Smooth visual parallax zoom */
+}
+
+.hotspot-card-pro:hover .card-content-pro {
+    transform: translateY(0);
+    /* Slides up details panel */
+}
+
+.hotspot-card-pro:hover .card-expanded-info {
+    opacity: 1;
+    /* Fades in paragraph and buttons */
+}
+
+/* ===================================================
+   📱 100% BULLETPROOF NATIVE MOBILE REFACTOR LOCKS
+   =================================================== */
+@media screen and (max-width: 768px) {
+    .hotspots-premium-section {
+        padding: 80px 20px;
+    }
+
+    .hotspots-grid-pro {
+        grid-template-columns: 1fr;
+        /* Rigid stack layout constraint */
+        gap: 30px;
+        max-width: 450px;
+        /* Centers and limits mobile width card blowouts */
+    }
+
+    .hotspot-card-pro {
+        height: 420px;
+        /* Slightly compact profile on small screens */
+    }
+
+    /* On Mobile: Cancel hidden states since hover doesn't exist on touch screens */
+    .card-content-pro {
+        transform: translateY(0) !important;
+        background: linear-gradient(to top, rgba(7, 13, 7, 1) 0%, rgba(7, 13, 7, 0.85) 65%, transparent 100%);
+        padding: 20px;
+    }
+
+    .card-expanded-info {
+        opacity: 1 !important;
+    }
+
+    .card-primary-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .hotspot-loc {
+        margin-bottom: 10px;
+    }
+
+    .card-expanded-info p {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+        line-height: 1.5;
+        /* Line clamp to prevent long text from blowing up mobile heights */
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .hotspot-meta-pro {
+        margin-bottom: 15px;
+    }
+
+    .price-tag {
+        font-size: 1.2rem;
+    }
+}
+
+/* --- EXPLORE BY ECO-ZONE (EXPANDING PILLARS V2) --- */
+.eco-zones-premium {
+    background-color: #070d07;
+    /* Dark theme to match the rest of the page */
+    padding: 120px 20px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.eco-accordion-container {
+    display: flex;
+    width: 100%;
+    max-width: 1100px;
+    height: 500px;
+    /* Tall desktop panels */
+    margin: 0 auto;
+    gap: 20px;
+}
+
+/* Individual Expanding Panel */
+.eco-panel {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    flex: 1;
+    /* Default flex value */
+    transition: flex 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Dark cinematic overlay */
+.panel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(7, 13, 7, 0.95) 0%, rgba(7, 13, 7, 0.4) 50%, rgba(7, 13, 7, 0.1) 100%);
+    z-index: 1;
+    transition: background 0.5s ease;
+}
+
+/* Center Icon (Visible when not hovered) */
+.panel-icon {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    z-index: 2;
+    transition: all 0.5s ease;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.5));
+}
+
+/* Inner Content Wrapper */
+.panel-content {
+    position: absolute;
+    bottom: -50px;
+    /* Hidden slightly lower */
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    z-index: 3;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Glassmorphism Text Box */
+.panel-glass-box {
+    background: rgba(20, 40, 20, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 20px;
+    min-width: 250px;
+}
+
+.panel-glass-box h3 {
+    color: #ffffff;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    /* Prevents text wrap during animation */
+}
+
+.panel-glass-box p {
+    color: #cccccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.panel-explore-btn {
+    color: #4CAF50;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.panel-explore-btn:hover {
+    color: #ffffff;
+}
+
+/* --- THE HOVER MAGIC (DESKTOP ONLY) --- */
+.eco-panel:hover {
+    flex: 3;
+    /* Expands to take up more space */
+    box-shadow: 0 20px 50px rgba(76, 175, 80, 0.2);
+    border-color: rgba(76, 175, 80, 0.4);
+}
+
+.eco-panel:hover .panel-overlay {
+    background: linear-gradient(to top, rgba(7, 13, 7, 0.9) 0%, rgba(7, 13, 7, 0.2) 60%, transparent 100%);
+}
+
+.eco-panel:hover .panel-icon {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+    /* Moves up and fades out */
+}
+
+.eco-panel:hover .panel-content {
+    bottom: 0;
+    opacity: 1;
+    /* Slides up and fades in */
+}
+
+/* =========================================
+   📱 MOBILE RESPONSIVENESS (VERTICAL STACK)
+   ========================================= */
+@media screen and (max-width: 992px) {
+    .eco-accordion-container {
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .eco-zones-premium {
+        padding: 80px 20px;
+    }
+
+    /* Change flex row to vertical column */
+    .eco-accordion-container {
+        flex-direction: column;
+        height: auto;
+        gap: 25px;
+    }
+
+    /* Lock panels to fixed heights, disable flex expansion */
+    .eco-panel {
+        flex: none !important;
+        /* Forces off the hover expand */
+        width: 100%;
+        height: 280px;
+        border-radius: 20px;
+    }
+
+    /* On mobile, always show the content, hide the big center icon */
+    .panel-icon {
+        display: none;
+    }
+
+    .panel-content {
+        bottom: 0;
+        opacity: 1;
+        padding: 15px;
+    }
+
+    .panel-glass-box {
+        padding: 20px;
+        background: rgba(10, 20, 10, 0.75);
+    }
+
+    .panel-glass-box h3 {
+        font-size: 1.4rem;
+        white-space: normal;
+        /* Allow text wrap on mobile */
+    }
+
+    .panel-glass-box p {
+        font-size: 0.9rem;
+    }
+}
+
+/* --- HIDDEN GEMS V2 (LUXURY OVERLAP & GLASSMORPHISM) --- */
+.gems-premium-section {
+    background-color: #0a140a;
+    /* Deep forest dark background */
+    padding: 120px 20px;
+    overflow: hidden;
+    /* Prevents horizontal scroll from animations */
+}
+
+.gems-grid-pro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/* --- Visual Gallery (Left Side) --- */
+.gems-visuals {
+    position: relative;
+    width: 100%;
+    height: 550px;
+}
+
+.gem-img-main {
+    width: 75%;
+    height: 450px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 1;
+}
+
+.gem-img-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.gem-img-main:hover img {
+    transform: scale(1.08);
+    /* Slow cinematic zoom */
+}
+
+/* Overlapping Secondary Image */
+.gem-img-secondary {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    width: 55%;
+    /* Slightly smaller */
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 8px solid #0a140a;
+    /* Creates a cutout effect against the background */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.gem-img-secondary img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Floating Animation */
+.animate-float-slow {
+    animation: floatOverlap 6s ease-in-out infinite;
+}
+
+@keyframes floatOverlap {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Secret Floating Badge */
+.gem-secret-badge {
+    position: absolute;
+    top: 30px;
+    left: -20px;
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 30px;
+    z-index: 3;
+    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Content & Glass Box (Right Side) --- */
+.gems-desc {
+    color: #cccccc;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* Frosted Glass Rules Box */
+.gem-rules-glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 35px 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.gem-rules-glass:hover {
+    transform: translateY(-5px);
+    border-color: rgba(76, 175, 80, 0.4);
+}
+
+.gem-rules-glass h3 {
+    color: #81C784;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.gem-rules-glass ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gem-rules-glass ul li {
+    color: #e0e0e0;
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    line-height: 1.5;
+}
+
+.gem-rules-glass ul li:last-child {
+    margin-bottom: 0;
+}
+
+.rule-icon {
+    font-size: 1.2rem;
+}
+
+/* Specific Action Button */
+.gems-action-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+    padding: 14px 35px;
+    border-radius: 30px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.gems-action-btn:hover {
+    background-color: #4CAF50;
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.3);
+    transform: translateX(5px);
+}
+
+/* =========================================
+   📱 MOBILE RESPONSIVE LOGIC (BULLETPROOF)
+   ========================================= */
+@media screen and (max-width: 992px) {
+    .gems-grid-pro {
+        gap: 40px;
+    }
+
+    .gem-img-main {
+        width: 85%;
+    }
+
+    .gem-img-secondary {
+        width: 50%;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .gems-premium-section {
+        padding: 80px 20px;
+    }
+
+    /* Stack visual and text vertically */
+    .gems-grid-pro {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    /* Resize visual gallery for small screens */
+    .gems-visuals {
+        height: 400px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .gem-img-main {
+        width: 80%;
+        height: 320px;
+    }
+
+    .gem-img-secondary {
+        width: 55%;
+        height: 220px;
+        border-width: 6px;
+        bottom: 10px;
+    }
+
+    .gem-secret-badge {
+        left: -10px;
+        top: 20px;
+        font-size: 0.8rem;
+        padding: 8px 15px;
+    }
+
+    .gems-content {
+        text-align: center;
+    }
+
+    /* Align lists left even when container is centered */
+    .gem-rules-glass {
+        text-align: left;
+        padding: 25px 20px;
+    }
+
+    .gem-rules-glass ul li {
+        font-size: 0.95rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gems-visuals {
+        height: 350px;
+    }
+
+    .gem-img-main {
+        height: 280px;
+        width: 90%;
+    }
+
+    .gem-img-secondary {
+        height: 180px;
+        width: 60%;
+        right: -10px;
+    }
+}
+
+/* --- INTERACTIVE TRAVEL CHECKLIST V2 --- */
+.checklist-premium {
+    background-color: #070d07;
+    /* Consistent dark base */
+    padding: 100px 20px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.checklist-wrapper {
+    max-width: 750px;
+    /* Kept slim for reading comfort */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Base State of Checklist Card */
+.check-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effect on desktop */
+.check-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateX(10px);
+    /* Slight nudge to the right */
+}
+
+/* Circle Checkbox */
+.check-circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.check-mark {
+    color: transparent;
+    /* Hidden by default */
+    font-size: 1.2rem;
+    font-weight: bold;
+    transform: scale(0);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Text Content */
+.check-content h3 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.check-content p {
+    color: #aaaaaa;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* =========================================
+   ✅ COMPLETED (CLICKED) STATE MAGIC
+   ========================================= */
+.check-card.completed {
+    background: rgba(76, 175, 80, 0.1);
+    /* Soft green background */
+    border-color: #4CAF50;
+    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.2);
+}
+
+.check-card.completed .check-circle {
+    background: #4CAF50;
+    border-color: #4CAF50;
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+}
+
+.check-card.completed .check-mark {
+    color: #ffffff;
+    transform: scale(1);
+    /* Pops in */
+}
+
+.check-card.completed .check-content h3 {
+    color: #81C784;
+    /* Turns green */
+    text-decoration: line-through;
+    text-decoration-color: rgba(129, 199, 132, 0.4);
+}
+
+.check-card.completed .check-content p {
+    color: #777777;
+    /* Dims out completed text */
+}
+
+/* JS Bounce Animation Class */
+.bounce-anim {
+    animation: clickBounce 0.3s ease;
+}
+
+@keyframes clickBounce {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.97);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* =========================================
+   📱 MOBILE RESPONSIVENESS (TOUCH SAFE)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    .checklist-premium {
+        padding: 80px 20px;
+    }
+
+    .check-card {
+        padding: 20px;
+        gap: 15px;
+        border-radius: 16px;
+    }
+
+    /* Disable the hover nudge on mobile, rely on tap instead */
+    .check-card:hover {
+        transform: none;
+    }
+
+    /* Maintain checked nudge for visual feedback on mobile */
+    .check-card.completed {
+        transform: scale(0.98);
+    }
+
+    .check-circle {
+        width: 30px;
+        height: 30px;
+    }
+
+    .check-mark {
+        font-size: 1rem;
+    }
+
+    .check-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .check-content p {
+        font-size: 0.9rem;
+    }
+}
+
+/* --- TRAIL DIFFICULTY LEVELS (GAMIFIED UI) --- */
+.expedition-levels {
+    background-color: #050a05;
+    /* Extra dark background to make neon colors pop */
+    padding: 120px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.levels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+    /* Aligns items to center for the featured card lift */
+}
+
+/* Base Card Styling */
+.level-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 24px;
+    padding: 40px 30px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.featured-level {
+    transform: scale(1.05);
+    /* Makes the middle card slightly bigger */
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 215, 0, 0.2);
+    /* Gold subtle border */
+    z-index: 2;
+}
+
+/* Color Themes for each level */
+.level-green:hover {
+    border-color: #4CAF50;
+    box-shadow: 0 20px 40px rgba(76, 175, 80, 0.15);
+    transform: translateY(-10px);
+}
+
+.level-green .level-badge {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+}
+
+.level-green .bar-fill {
+    background: #4CAF50;
+}
+
+.level-gold:hover {
+    border-color: #FFD700;
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.15);
+    transform: scale(1.05) translateY(-10px);
+}
+
+.level-gold .level-badge {
+    background: rgba(255, 215, 0, 0.2);
+    color: #FFD700;
+}
+
+.level-gold .bar-fill {
+    background: #FFD700;
+}
+
+.level-red:hover {
+    border-color: #F44336;
+    box-shadow: 0 20px 40px rgba(244, 67, 54, 0.15);
+    transform: translateY(-10px);
+}
+
+.level-red .level-badge {
+    background: rgba(244, 67, 54, 0.2);
+    color: #F44336;
+}
+
+.level-red .bar-fill {
+    background: #F44336;
+}
+
+/* Level Badge */
+.level-badge {
+    display: inline-block;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+/* Card Typography */
+.level-card h3 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.level-card p {
+    color: #cccccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    min-height: 70px;
+    /* Keeps cards equal height */
+}
+
+/* Progress Bar Metrics (The Gamified Part) */
+.metrics-box {
+    margin-bottom: 35px;
+}
+
+.metric {
+    margin-bottom: 15px;
+}
+
+.metric span {
+    display: block;
+    color: #aaaaaa;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.bar-bg {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    width: 0;
+    /* Starts at 0 for animation */
+    /* Animation is triggered by AOS or loads normally */
+    transition: width 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Call to Action Button inside Card */
+.level-btn {
+    display: block;
+    text-align: center;
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.level-card:hover .level-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+}
+
+/* =========================================
+   📱 MOBILE RESPONSIVENESS (VERTICAL STACK)
+   ========================================= */
+@media screen and (max-width: 992px) {
+    .featured-level {
+        transform: scale(1);
+        /* Removes scaling on tablet/mobile to prevent overlap */
+    }
+
+    .level-gold:hover {
+        transform: translateY(-10px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .expedition-levels {
+        padding: 80px 20px;
+    }
+
+    .levels-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 450px;
+        /* Limits width on mobile so it doesn't stretch too thin */
+    }
+
+    .level-card {
+        padding: 30px 25px;
+    }
+
+    .level-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .level-card p {
+        min-height: auto;
+        /* Lets text flow naturally on mobile */
+        margin-bottom: 25px;
+    }
+
+    .metrics-box {
+        margin-bottom: 25px;
+    }
+}
+
+/* --- FINAL CTA BANNER (IMMERSIVE SPOTLIGHT) --- */
+.dest-final-cta {
+    position: relative;
+    padding: 140px 20px;
+    background-color: #050a05;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ambient Moving Spotlight Background */
+.cta-spotlight-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Dark overlay + Spotlight + Forest Image */
+    background: radial-gradient(circle at center, rgba(76, 175, 80, 0.15) 0%, rgba(5, 10, 5, 0.9) 70%),
+        url('asset/ei1.webp') center/cover no-repeat;
+    z-index: 1;
+    animation: pulseSpotlight 8s infinite alternate ease-in-out;
+}
+
+@keyframes pulseSpotlight {
+    0% {
+        transform: scale(1);
+        filter: brightness(0.8);
+    }
+
+    100% {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+    }
+}
+
+.dest-final-cta .container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Premium Glassmorphism Card */
+.cta-glass-card {
+    background: rgba(10, 20, 10, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(76, 175, 80, 0.2);
+    padding: 60px 50px;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(76, 175, 80, 0.05);
+    transform: translateY(0);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cta-glass-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 40px 70px rgba(0, 0, 0, 0.6), 0 0 60px rgba(76, 175, 80, 0.15);
+}
+
+/* Live Status Badge (FOMO Trigger) */
+.live-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+/* Red Pulsing Dot Animation */
+.pulsing-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #F44336;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #F44336;
+    animation: pulseRed 1.5s infinite;
+}
+
+@keyframes pulseRed {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(244, 67, 54, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(244, 67, 54, 0);
+    }
+}
+
+/* CTA Typography */
+.cta-glass-card h2 {
+    font-size: 3.2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.cta-glass-card h2 span {
+    color: #4CAF50;
+    background: linear-gradient(90deg, #4CAF50, #81C784);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cta-glass-card p {
+    color: #cccccc;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Action Group */
+.cta-action-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Glowing Primary Button */
+.btn-glow-primary {
+    display: inline-block;
+    background: #4CAF50;
+    color: #ffffff;
+    padding: 18px 45px;
+    border-radius: 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.3);
+}
+
+.btn-glow-primary:hover {
+    background: #ffffff;
+    color: #070d07;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(76, 175, 80, 0.5), 0 0 20px rgba(76, 175, 80, 0.2);
+}
+
+/* Trust Indicator Text */
+.secure-text {
+    font-size: 0.85rem;
+    color: #888888;
+    font-weight: 500;
+}
+
+/* =========================================
+   📱 MOBILE RESPONSIVENESS (PERFECT SCALING)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    .dest-final-cta {
+        padding: 100px 20px;
+    }
+
+    .cta-glass-card {
+        padding: 40px 25px;
+        border-radius: 24px;
+    }
+
+    .cta-glass-card h2 {
+        font-size: 2.2rem;
+    }
+
+    .cta-glass-card p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .live-status-badge {
+        font-size: 0.8rem;
+        padding: 6px 15px;
+    }
+
+    /* Make button stretch to full width for easy thumb tap */
+    .btn-glow-primary {
+        width: 100%;
+        padding: 16px 20px;
+        font-size: 1.05rem;
+    }
+
+    .secure-text {
+        font-size: 0.8rem;
+    }
+}

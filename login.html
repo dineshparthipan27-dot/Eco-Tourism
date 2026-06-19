@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Eco Voyage</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <a href="index.html" class="back-home">
+        <i class="fa-solid fa-arrow-left"></i> <span> Return to Home</span>
+    </a>
+
+    <div class="auth-container">
+        <div class="auth-glass-card">
+
+            <div class="logo">
+                <img src="./asset/white logo (1).webp" alt="Company Logo" class="logo-img">
+            </div>
+
+            <div class="tab-buttons">
+                <button class="active" id="loginBtn">Sign In</button>
+                <button id="signupBtn">Explore (Sign Up)</button>
+            </div>
+
+            <form id="loginForm">
+                <h2>Welcome Back 👋</h2>
+                <p class="subtitle">Access your eco-dashboard</p>
+
+                <select id="loginRole" required>
+                    <option value="">Select Role</option>
+                    <option value="admin">Expedition Leader (Admin)</option>
+                    <option value="user">Explorer (User)</option>
+                </select>
+
+                <div class="input-wrapper">
+                    <input type="email" id="loginEmail" placeholder="Email Address">
+                    <span class="error-msg" id="loginEmailError"></span>
+                </div>
+
+                <div class="password-box">
+                    <input type="password" id="loginPassword" placeholder="Password">
+                    <i class="fa-solid fa-eye-slash toggle-password"></i>
+                    <span class="error-msg" id="loginPasswordError"></span>
+                </div>
+
+                <div class="options">
+                    <label class="remember-me">
+                        <input type="checkbox"> Remember Me
+                    </label>
+                    <a href="404.html">Lost Signal? (Forgot Password)</a>
+                </div>
+
+                <button type="submit" class="main-btn">Access Basecamp</button>
+
+                <div class="divider">OR CONNECT WITH</div>
+
+                <div class="social-icons">
+                    <a href="404.html"><i class="fab fa-google"></i></a>
+                    <a href="404.html"><i class="fab fa-apple"></i></a>
+                </div>
+
+                <p class="bottom-text">
+                    New to the wild? <span id="showSignup">Join the Tribe</span>
+                </p>
+            </form>
+
+            <form id="signupForm" class="hidden">
+                <h2>Join The Tribe</h2>
+                <p class="subtitle">Start your wilderness journey</p>
+
+                <select id="signupRole" required>
+                    <option value="">Select Role</option>
+                    <option value="admin">Expedition Leader</option>
+                    <option value="user">Explorer</option>
+                </select>
+
+                <div class="input-wrapper">
+                    <input type="text" id="signupName" placeholder="Full Name">
+                    <span class="error-msg" id="signupNameError"></span>
+                </div>
+
+                <div class="input-wrapper">
+                    <input type="email" id="signupEmail" placeholder="Email Address">
+                    <span class="error-msg" id="signupEmailError"></span>
+                </div>
+
+                <div class="password-box">
+                    <input type="password" id="signupPassword" class="password" placeholder="Password">
+                    <i class="fa-solid fa-eye-slash toggle-password"></i>
+                    <span class="error-msg" id="signupPasswordError"></span>
+                </div>
+
+                <div class="password-box">
+                    <input type="password" id="signupConfirmPassword" class="password" placeholder="Confirm Password">
+                    <i class="fa-solid fa-eye-slash toggle-password"></i>
+                    <span class="error-msg" id="signupConfirmError"></span>
+                </div>
+
+                <button type="submit" class="main-btn">Create Pass</button>
+
+                <p class="bottom-text" style="margin-top: 15px;">
+                    Already a member? <span id="showLogin">Sign In</span>
+                </p>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+
+</html>

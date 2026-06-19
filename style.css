@@ -1,0 +1,1151 @@
+/* --- UPGRADED HERO SECTION --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Keeps zooming background inside */
+}
+
+/* Zooming Background Animation (Ken Burns Effect) */
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Dark gradient over a beautiful nature image */
+    background: linear-gradient(rgba(10, 25, 10, 0.6), rgba(10, 25, 10, 0.3)),
+        url('./asset/t1.webp') center/cover;
+    z-index: -1;
+    animation: zoomBg 20s infinite alternate linear;
+}
+
+@keyframes zoomBg {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.15);
+    }
+
+    /* Slow zoom in */
+}
+
+/* Glassmorphism Content Box */
+.hero-content {
+    text-align: center;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    /* Semi-transparent */
+    backdrop-filter: blur(12px);
+    /* Glass blur effect */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    max-width: 800px;
+    width: 90%;
+    z-index: 1;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content h1 {
+    color: #fff;
+    font-size: 4.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: #81C784;
+    /* Soft Eco Green */
+}
+
+.hero-content p {
+    color: #e0e0e0;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Floating Badge Animation */
+.floating-badge {
+    position: absolute;
+    top: 19%;
+    right: 10%;
+    background: #fff;
+    color: #2e7d32;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    animation: floatBadge 3s ease-in-out infinite;
+    z-index: 2;
+}
+
+@keyframes floatBadge {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Dual Buttons Styling */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.primary-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.6);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.secondary-btn:hover {
+    background-color: white;
+    color: #142814;
+    transform: translateY(-5px);
+}
+
+/* --- MOBILE RESPONSIVENESS FOR HERO --- */
+@media screen and (max-width: 768px) {
+    .hero-content {
+        padding: 30px 20px;
+    }
+
+    .hero {
+        padding-top: 200px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        /* Stacks buttons on mobile */
+        gap: 15px;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        /* Full width buttons on mobile */
+    }
+
+    .floating-badge {
+        top: 22%;
+        right: 5%;
+        font-size: 0.8rem;
+        padding: 8px 15px;
+    }
+}
+
+
+/* --- ABOUT US SECTION --- */
+.about-section {
+    padding: 100px 20px;
+    background-color: #142814;
+    overflow: hidden;
+    /* Prevents AOS animation horizontal scroll issue */
+}
+
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Images Layout */
+.about-images {
+    position: relative;
+    padding-right: 40px;
+    padding-bottom: 40px;
+}
+
+.main-img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+}
+
+.main-img:hover {
+    transform: scale(1.02);
+}
+
+.floating-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    border-radius: 20px;
+    border: 8px solid #fcfcfc;
+    /* Creates a cutout effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+}
+
+.experience-badge {
+    position: absolute;
+    top: 30px;
+    left: -20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+    z-index: 3;
+    animation: bounceSlow 4s infinite ease-in-out;
+}
+
+.experience-badge h3 {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.experience-badge p {
+    font-size: 0.9rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+@keyframes bounceSlow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Text Content */
+.section-subtitle {
+    color: #4CAF50;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.section-title span {
+    color: #4CAF50;
+    position: relative;
+}
+
+.about-desc {
+    color: #f2eeee;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* Features List */
+.about-features {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.about-features li {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #f7f3f3;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.about-features .icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    background: #e8f5e9;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.about-btn {
+    display: inline-block;
+}
+
+/* --- MOBILE RESPONSIVENESS FOR ABOUT SECTION --- */
+@media screen and (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+
+    .about-images {
+        padding-right: 20px;
+        padding-bottom: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .floating-img {
+        width: 45%;
+        right: -10px;
+        bottom: -10px;
+        border-width: 5px;
+    }
+
+    .experience-badge {
+        left: -10px;
+        top: 20px;
+        padding: 15px;
+    }
+
+    .experience-badge h3 {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .about-features li {
+        justify-content: center;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .about-section {
+        padding: 60px 15px;
+    }
+
+    .floating-img {
+        display: none;
+        /* Hide small image on very small screens for clean look */
+    }
+
+    .about-images {
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+}
+
+/* --- ECO-PRACTICES / CORE VALUES SECTION --- */
+.practices-section {
+    padding: 100px 20px;
+    background-color: #1f431f;
+    /* Very light eco-green background */
+}
+
+/* Common Header Style for upcoming sections too */
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+}
+
+.section-desc {
+    color: #f1f0f0;
+    font-size: 1.1rem;
+    margin-top: 15px;
+}
+
+/* Grid Layout */
+.practices-grid {
+    display: grid;
+    /* Smart Grid: Automatically creates columns based on screen width */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 10px;
+}
+
+/* Card Styling */
+.practice-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 4px solid transparent;
+}
+
+/* Icon Styling inside Card */
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: #e8f5e9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 25px auto;
+    font-size: 2.5rem;
+    transition: transform 0.4s ease;
+}
+
+.practice-card h3 {
+    font-size: 1.3rem;
+    color: #142814;
+    margin-bottom: 15px;
+}
+
+.practice-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- CARD HOVER ANIMATIONS --- */
+.practice-card:hover {
+    transform: translateY(-10px);
+    /* Lifts up */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    /* Stronger shadow */
+    border-bottom: 4px solid #4CAF50;
+    /* Green border appears at bottom */
+}
+
+.practice-card:hover .icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    /* Icon pops slightly */
+    background: #4CAF50;
+    color: white;
+}
+
+/* Change emoji color to text logic (since emojis don't change color via CSS easily, 
+   the background change itself gives a great effect) */
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media screen and (max-width: 768px) {
+    .practices-section {
+        padding: 60px 20px;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .practice-card {
+        padding: 30px 20px;
+    }
+}
+
+/* --- TOP DESTINATIONS SECTION --- */
+.destinations-section {
+    padding: 100px 20px;
+    background-color: #142814;
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Card Styling */
+.dest-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 400px;
+    /* Fixed height for uniformity */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.dest-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* Hover Effect on Image */
+.dest-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Content Overlay Layer */
+.dest-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(10, 25, 10, 0.95) 0%, rgba(10, 25, 10, 0.7) 60%, transparent 100%);
+    color: white;
+    padding: 30px 20px 20px 20px;
+    transition: transform 0.4s ease;
+    /* Hide the details initially by pushing them down */
+    transform: translateY(120px);
+}
+
+.dest-info {
+    margin-bottom: 15px;
+}
+
+.dest-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.location {
+    color: #81C784;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Details that appear on hover */
+.dest-hidden-details {
+    opacity: 0;
+    transition: opacity 0.4s ease 0.1s;
+    /* Delay opacity for smooth feel */
+}
+
+.dest-hidden-details p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+}
+
+.dest-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    color: #a5d6a7;
+    font-weight: 600;
+}
+
+.dest-btn {
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    background-color: white;
+}
+
+/* Hover Reveals Content */
+.dest-card:hover .dest-content {
+    transform: translateY(0);
+    /* Slides up completely */
+}
+
+.dest-card:hover .dest-hidden-details {
+    opacity: 1;
+    /* Makes text visible */
+}
+
+/* --- MOBILE RESPONSIVENESS FOR DESTINATIONS --- */
+@media screen and (max-width: 768px) {
+    .destinations-section {
+        padding: 60px 20px;
+    }
+
+    .dest-card {
+        height: 350px;
+    }
+
+    /* On mobile, don't hide everything. Show it slightly so users know to tap */
+    .dest-content {
+        transform: translateY(0);
+        background: linear-gradient(to top, rgba(10, 25, 10, 0.95) 0%, rgba(10, 25, 10, 0.8) 70%, transparent 100%);
+    }
+
+    .dest-hidden-details {
+        opacity: 1;
+    }
+
+    /* Make button slightly smaller on mobile */
+    .dest-btn {
+        padding: 8px 15px;
+    }
+}
+
+/* --- TOUR PACKAGES SECTION --- */
+.packages-section {
+    padding: 100px 20px;
+    background-color: #1f431f;
+    /* Subtle green background */
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    align-items: center;
+    /* Aligns the scaled center card perfectly */
+    padding: 20px 0;
+}
+
+/* Base Card Styling */
+.package-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    border: 1px solid #e0e0e0;
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.package-header h3 {
+    font-size: 1.6rem;
+    color: #142814;
+    margin-bottom: 5px;
+}
+
+.package-header p {
+    color: #4CAF50;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.package-price h2 {
+    font-size: 3rem;
+    color: #142814;
+    margin-bottom: 30px;
+}
+
+.package-price span {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 400;
+}
+
+/* Features List */
+.package-features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.package-features li {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.package-features li:last-child {
+    border-bottom: none;
+}
+
+/* Button for normal cards */
+.package-btn {
+    display: block;
+    border: 2px solid #4CAF50;
+    color: #4CAF50;
+    background: transparent;
+}
+
+.package-btn:hover {
+    background: #4CAF50;
+    color: white;
+}
+
+/* --- POPULAR CARD (CENTER) STYLING --- */
+.popular-card {
+    background-color: #142814;
+    color: white;
+    transform: scale(1.08);
+    /* Makes it slightly bigger */
+    border: none;
+    box-shadow: 0 15px 40px rgba(20, 40, 20, 0.3);
+}
+
+.popular-card:hover {
+    transform: scale(1.08) translateY(-10px);
+}
+
+.popular-card .package-header h3,
+.popular-card .package-price h2 {
+    color: white;
+}
+
+.popular-card .package-price span,
+.popular-card .package-features li {
+    color: #e0e0e0;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Popular Badge */
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FFC107;
+    /* Eye-catching Yellow */
+    color: #142814;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
+}
+
+/* --- MOBILE RESPONSIVENESS FOR PACKAGES --- */
+@media screen and (max-width: 992px) {
+    .packages-grid {
+        gap: 30px;
+    }
+
+    /* Remove scaling on smaller screens so they stack normally */
+    .popular-card {
+        transform: scale(1);
+    }
+
+    .popular-card:hover {
+        transform: translateY(-10px);
+    }
+    .packages-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .packages-section {
+        padding: 60px 20px;
+    }
+
+    .package-card {
+        padding: 30px 20px;
+    }
+
+    .package-price h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* --- TESTIMONIALS SECTION --- */
+.testimonials-section {
+    padding: 100px 20px;
+    background-color: #142814;
+    /* Dark Forest Green for contrast */
+    color: white;
+}
+
+/* Modifier for header in dark background */
+.dark-header .section-title,
+.dark-header .section-desc {
+    color: white;
+}
+
+.testi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding-top: 20px;
+}
+
+/* Testimonial Card */
+.testi-card {
+    background-color: #ffffff;
+    color: #333;
+    padding: 40px 30px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease;
+    z-index: 1;
+}
+
+.testi-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Huge Quote Icon inside card */
+.quote-icon {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 5rem;
+    color: #e8f5e9;
+    /* Very light green so it acts like a watermark */
+    line-height: 1;
+    z-index: -1;
+    font-family: Georgia, serif;
+}
+
+.stars {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.review-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 30px;
+    font-style: italic;
+    min-height: 100px;
+    /* Keeps cards aligned */
+}
+
+/* Client Info Area */
+.client-info {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 20px;
+}
+
+.client-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 3px solid #4CAF50;
+    transition: transform 0.4s ease;
+}
+
+.testi-card:hover .client-img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.client-details h4 {
+    font-size: 1.1rem;
+    color: #142814;
+    margin-bottom: 3px;
+}
+
+.client-details span {
+    font-size: 0.85rem;
+    color: #4CAF50;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- MOBILE RESPONSIVENESS FOR TESTIMONIALS --- */
+@media screen and (max-width: 768px) {
+    .testimonials-section {
+        padding: 60px 20px;
+    }
+
+    .testi-card {
+        padding: 30px 20px;
+    }
+
+    .review-text {
+        font-size: 1rem;
+        min-height: auto;
+        /* Remove min-height on mobile */
+    }
+}
+
+/* --- BLOG / ECO-TIPS SECTION --- */
+.blog-section {
+    padding: 100px 20px;
+    background-color: #1f431f;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+/* Blog Card Styling */
+.blog-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Wrapper and Animation */
+.blog-image {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.1);
+    /* Zoom effect on hover */
+}
+
+/* Floating Tag */
+.blog-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 20px;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Content Area */
+.blog-content {
+    padding: 30px 25px;
+}
+
+.blog-date {
+    display: block;
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.blog-content h3 {
+    font-size: 1.4rem;
+    color: #142814;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.blog-card:hover .blog-content h3 {
+    color: #4CAF50;
+    /* Title turns green on hover */
+}
+
+.blog-content p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Read More Link & Arrow Animation */
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    color: #4CAF50;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.read-more .arrow {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover .read-more {
+    color: #2e7d32;
+}
+
+.blog-card:hover .arrow {
+    transform: translateX(5px);
+    /* Arrow shoots forward */
+}
+
+/* --- MOBILE RESPONSIVENESS FOR BLOG --- */
+@media screen and (max-width: 768px) {
+    .blog-section {
+        padding: 60px 20px;
+    }
+
+    .blog-grid {
+        gap: 30px;
+        grid-template-columns: 1fr;
+    }
+
+    .blog-image {
+        height: 200px;
+    }
+
+    .blog-content {
+        padding: 25px 20px;
+    }
+
+    .blog-content h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* --- OUR IMPACT SECTION (UPGRADED) --- */
+.impact-section {
+    position: relative;
+    padding: 120px 20px;
+    /* Beautiful dark forest background */
+    background: url('./asset/de4.webp') center/cover fixed;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.impact-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10, 25, 10, 0.9), rgba(20, 40, 20, 0.7));
+}
+
+.relative-z {
+    position: relative;
+    z-index: 2;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Glassmorphism Card Style */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    /* Very transparent white */
+    backdrop-filter: blur(10px);
+    /* The Glass Blur Effect */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 20px;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Glowing Hover Effect */
+.glass-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #4CAF50;
+    box-shadow: 0 15px 40px rgba(76, 175, 80, 0.3);
+    /* Green Glow */
+}
+
+/* Floating Icon Animation */
+.stat-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.stat-card h2 {
+    font-size: 3.5rem;
+    color: #81C784;
+    /* Light Eco Green */
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.stat-card p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- MOBILE RESPONSIVENESS FOR IMPACT --- */
+@media screen and (max-width: 768px) {
+    .impact-section {
+        padding: 80px 20px;
+        background-attachment: scroll;
+        /* Disables fixed background on mobile for better performance */
+    }
+
+    .stats-grid {
+        gap: 20px;
+    }
+
+    .glass-card {
+        padding: 30px 15px;
+    }
+
+    .stat-icon {
+        font-size: 2.8rem;
+    }
+
+    .stat-card h2 {
+        font-size: 2.8rem;
+    }
+}
