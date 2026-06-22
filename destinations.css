@@ -1561,3 +1561,7 @@
 .form-error.show { display: block; }
 .input-error { border: 1px solid #ff4d4d !important; }
 .input-success { border: 1px solid #4CAF50 !important; }
+
+.section-title {
+    color: white;
+}
